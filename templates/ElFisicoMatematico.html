@@ -1,0 +1,96 @@
+<div class="contenido-cuerpo">
+  <section class="FM_seccion">
+    <div class="header">
+      <h1 class="titulo">CURSOS, TRABAJOS y PROYECTOS</h1>
+    </div>
+    <div class="contenido content-list">
+      <p><strong> ✍ Física, Matemáticas, Química, Inglés </strong></p>
+      <p><strong> ✍ Métodos numéricos </strong></p>
+      <p><strong> ✍ Análisis Matemático </strong></p>
+      <p><strong> ✍ Cinemática directa e inversa </strong></p>
+      <p><strong> ✍ Modelos dinámicos </strong></p>
+      <p><strong> ✍ Teoría de control avanzado </strong></p>
+      <p><strong> ✍ Automatización de Procesos</strong></p>
+      <p><strong> ✍ Robótica teórica</strong></p>
+      <p><strong> ✍ Programación Lineal</strong></p>
+      <p><strong> ✍ Programación de autómatas</strong></p>
+      <p><strong> ✍ Programación en código </strong></p>
+    </div>
+    <div class="contenido content-images">
+      <img
+        src="static/img/Fisico/iconos/visual-s-code.png"
+        alt=""
+        width="55px"
+      />
+      <img src="static/img/Fisico/iconos/python.png" alt="" width="50px" />
+      <img src="static/img/Fisico/iconos/logo c.png" alt="" width="65px" />
+      <img src="static/img/Fisico/iconos/html_2.png" alt="" width="40px" />
+      <img src="static/img/Fisico/iconos/labview_2.png" alt="" width="50px" />
+      <img src="static/img/Fisico/iconos/Matlab.png" alt="" width="55px" />
+      <img src="static/img/Fisico/iconos/Scilab_Logo.png" alt="" width="65px" />
+      <img src="static/img/Fisico/iconos/PSEINT.png" alt="" width="45px" />
+      <img src="static/img/Fisico/iconos/solid.png" alt="" width="45px" />
+      <img src="static/img/Fisico/iconos/AutoCAD.png" alt="" width="65px" />
+    </div>
+    <div class="contenido content-images">
+      <img
+        src="static/img/Fisico/iconos/arduino-logo.png"
+        alt=""
+        width="70px"
+      />
+      <img src="static/img/Fisico/iconos/ABB.png" alt="" width="90px" />
+      <img
+        src="static/img/Fisico/iconos/Siemens-Logo.png"
+        alt=""
+        width="100px"
+      />
+      <img
+        src="static/img/Fisico/iconos/Schneider-Electric-Logo.png"
+        alt=""
+        width="100px"
+      />
+      <img src="static/img/Fisico/iconos/siemenes.png" alt="" width="160px" />
+    </div>
+    <div class="contenido content-horarios">
+      <h2>HORARIOS</h2>
+      <p>- Lunes --> 10:00h a 19:00h</p>
+      <p>- Martes a Viernes --> 9:00h a 19:00h</p>
+      <p>- Sábado --> 9:30h a 14:00h</p>
+      <p>- Dias fuera de horarios planear <strong>reserva</strong></p>
+    </div>
+    <div class="contenido content-precios">
+      <h2>PRECIOS</h2>
+      <p>- Escuela & Básico: 5usd la hora</p>
+      <p>- Bachiller (Superior): 6usd la hora</p>
+      <p>- Universidad Prepo (Superior): 6usd la hora</p>
+      <p>- Universidad (Avanzado): 7usd la hora</p>
+      <p>- Universidad (PLC - Automatizacion - Programación): 7usd la hora</p>
+    </div>
+
+    <div class="planes_horas_meses"></div>
+
+    <h2 class="form-title">Formularios para exámenes</h2>
+
+    <div class="class_machetes" id="id_machetes">
+      <a class="form-link" href="formulario"> ☞ FORMULARIOS</a>
+    </div>
+
+    <h2 class="form-title">CONTACTOS</h2>
+
+    <div class="class_machetes" id="id_machetes">
+      <a class="form-link" href="contactos"> ☞ CONTACTOS</a>
+    </div>
+  </section>
+</div>
+
+<!-- JAVASCRITPS -->
+<script type="module">
+  async function loadHoras() {
+    const response = await fetch("templates/horas.json");
+    const dt = await response.json();
+    console.log(dt);
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    loadHoras();
+  });
+</script>

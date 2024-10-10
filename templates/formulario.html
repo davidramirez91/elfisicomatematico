@@ -47,6 +47,325 @@
       t\right)}\,dt} $$
     </div>
   </section>
+
+  <div class="class_machetes" id="id_machetes">
+    <a type="submit" onclick="btn_derivadas()"> ☞ Derivadas</a>
+  </div>
+
+  <section class="class_derivadas">
+    <div class="contenido">
+      <h2 align="center">FORMULARIO - DERIVADAS</h2>
+      $$d(C) = 0$$ $$d(u) = du$$ $$d(u^n) = n\,u^{n-1}\,du$$ $$d(a^u) =
+      a^u\,\ln{a}\,du$$ $$d(u^v) = v\,u^{v-1}\,du+u^v\,\ln{u}\,dv$$ $$ d(e^{u})
+      = e^{u}\,du $$ $$d(uv) = u\,dv+v\,du$$ $$ d \left( \dfrac{u}{v} \right) =
+      \dfrac{v\,du-u\,dv}{v^2} $$ $$ d(\sqrt{u}) = \dfrac{du}{2\,\sqrt{u}} $$ $$
+      d(\log_{a}{u}) = \dfrac{du}{u\,\ln{a}} $$ $$ d(\ln{u}) = \dfrac{du}{u} $$
+    </div>
+    <div class="contenido">
+      $$d(\sin{u}) = \cos{u}\,du$$ $$d(\cos{u}) = -\sin{u}\,du$$ $$d(\tan{u}) =
+      \sec^2{u}\,du$$ $$d(\csc{u}) = -\csc{u}\,\cot{u}\,du$$ $$d(\sec{u}) =
+      \sec{u}\,\tan{u}\,du$$ $$d(\cot{u}) = -\csc^2{u}\,du$$ $$d(\arcsin{u}) =
+      \dfrac{du}{\sqrt{1-u^2}} $$ $$d(\arccos{u}) = -\dfrac{du}{\sqrt{1-u^2}}$$
+      $$d(\arctan{u}) = \dfrac{du}{1+u^2}$$ $$d(\mathrm{arcsc}\,{u}) =
+      -\dfrac{du}{u\,\sqrt{u^2-1}}$$ $$d(\mathrm{arsec}\,{u}) =
+      \dfrac{du}{u\,\sqrt{u^2-1}}$$ $$d(\mathrm{arcot}\,{u}) =
+      -\dfrac{du}{1+u^2}$$
+    </div>
+    <div class="contenido">
+      $$d(\sinh{u}) = \cosh{u}\,du$$ $$d(\cosh{u}) = -\sinh{u}\,du$$
+      $$d(\tanh{u}) = \mathrm{sech}^2{u}\,du$$ $$d(\mathrm{csch}\,{u}) =
+      -\mathrm{csch}\,{u}\,\coth{u}\,du$$ $$d(\mathrm{sech}\,{u}) =
+      -\mathrm{sech}\,{u}\,\tanh{u}\,du$$ $$d(\coth{u}) =
+      -\mathrm{csch}^2{u}\,du$$ $$d(\mathrm{arsinh}\,{u}) =
+      \dfrac{du}{\sqrt{1+u^2}} $$ $$d(\mathrm{arcosh}\,{u}) =
+      -\dfrac{du}{\sqrt{u^2-1}}$$ $$d(\mathrm{artanh}\,{u}) =
+      \dfrac{du}{1-u^2}$$ $$d(\mathrm{arcsch}\,{u}) =
+      -\dfrac{du}{u\,\sqrt{1+u^2}}$$ $$d(\mathrm{arsech}\,{u}) =
+      -\dfrac{du}{u\,\sqrt{1-u^2}}$$ $$d(\mathrm{arcoth}\,{u}) =
+      \dfrac{du}{1-u^2}$$
+    </div>
+  </section>
+
+  <div class="class_machetes" id="id_machetes">
+        <a type="submit" onclick="btn_integrales()"> ☞ Integrales</a></li>
+    </div>
+
+    <section class="class_integrales">    
+        <div class="contenido">
+            <h2 align="center">FORMULARIO - INTEGRALES</h2>
+            $$\int{du} = u+C$$
+            $$\int{\dfrac{du}{u}} = \ln{u}+C$$
+            
+            $$\int{e^u \,du} = e^u+C$$
+            $$\int{u^n \,du} = \dfrac{u^{n+1}}{n+1}+C$$
+            $$\int{a^u \,du} = \dfrac{a^u}{\ln{a}}+C$$
+
+            $$\int{\ln{u}\,du} = u\,\ln{u}-u+C$$
+            $$\int{u\,e^u\,du} = e^u\,(u-1)+C$$
+        </div>
+        <div class="contenido">
+            $$\int{\sin{u}\,du} = -\cos{u}+C$$
+            $$\int{\cos{u}\,du} = \sin{u}+C$$
+            $$\int{\tan{u}\,du} = -\ln{\left| \cos{u} \right|}+C = \ln{\left| \sec{u} \right|}+C$$
+
+            $$\int{\csc{u}\,du} = -\ln{\left| \csc{u}+\cot{u} \right|}+C$$
+            $$\int{\sec{u}\,du} = \ln{\left| \sec{u}+\tan{u} \right|}+C$$
+            $$\int{\cot{u}\,du} = \ln{\left| \sin{u} \right|}+C$$
+        </div>
+        <div class="contenido">
+            $$\int{\csc^2{u}\,du} = -\cot{u}+C$$
+            $$\int{\sec^2{u}\,du} = \tan{u}+C$$
+            $$\int{\tan^2{u}\,du} = \tan{u}-u+C$$
+        </div>
+        <div class="contenido">
+            $$\int{\sec{u}\,\tan{u}\,du} = \sec{u}+C$$
+            $$\int{\csc{u}\,\cot{u}\,du} = -\csc{u}+C$$
+        </div>
+        <div class="contenido">
+            $$\int{\dfrac{du}{a^2+u^2}} = \dfrac{1}{a}\,\arctan{\dfrac{u}{a}}+C$$
+            $$\int{\dfrac{du}{\sqrt{a^2-u^2}}} = \arcsin{\dfrac{u}{a}}+C$$
+            $$\int{\dfrac{du}{u\,\sqrt{u^2-a^2}}} = \dfrac{1}{a}\,\mathrm{arsec}{\dfrac{|u|}{a}}+C$$
+            $$\int{\sqrt{a^2-u^2}\,du} = \dfrac{1}{2}\,u\,\sqrt{a^2-u^2}+\dfrac{1}{2}\,a^2\,\arcsin{\dfrac{u}{a}}+C$$
+            $$\int{\sqrt{u^2 \pm a^2}\,du} = \dfrac{1}{2}\,u\,\sqrt{u^2 \pm a^2}+\dfrac{1}{2}\,a^2\,\ln{ \left| u+\sqrt{u^2 \pm a^2} \right|}+C$$
+        </div>
+    </section>
+
+    <div class="class_machetes" id="id_machetes">
+        <a type="submit" onclick="btn_edos()"> ☞ Ecuaciones Diferenciales</a>
+    </div>
+
+    <section class="class_edos">
+        <div class="contenido">
+            <h2 align="center">FORMULARIO - ECUACIONES DIFERENCIALES</h2>
+            <h3 class="contenido" style="text-align: center;">ECUACIONES DIFERENCIALES LINEALES</h3>
+            $$y'+p(x)\,y=q(x)$$
+            $$u=e^{\int p(x)\,dx}$$
+            $$y\,u=\int q\,u\,dx$$
+            <h3 class="contenido" style="text-align: center;">ECUACIONES DIFERENCIALES BERNOULLI</h3>
+            $$y' + P(x)\,y = Q(x)\,y_n \qquad \rightarrow \qquad u = y^{1-n}$$
+            <p class="contenido" style="text-align: center;" >Se lo lleva a la forma de la ecuacion diferencial lienal de primer orden</p>
+            $$x y' + y = 3x\sqrt{y}$$
+            $$u = y^{1-1/2} = y^{1/2}$$
+            $$u^2 = y  \qquad \rightarrow \qquad y' = 2u\,u'$$
+            $$2xu\,u' + u^2 = 3xu$$
+            $$u' + \frac{1}{2x}u = \frac{3}{2} \qquad EDL$$
+           
+            <h3 class="contenido" style="text-align: center;">ECUACIONES DIFERENCIALES HOMOGÉNEAS DE ORDEN SUPERIOR</h3>
+            $$a\,y'''+b\,y''+c\,y'+d\,y=0 \qquad  \rightarrow \qquad y=e^{r\,x}$$
+            $$a\,r^3+b\,r^2+c\,r+d=0 $$
+            <p style="text-align: center;">Si tiene un raíz compleja es</p> 
+            $$r=a+b\,i$$
+            <p style="text-align: center;" >Se usa la formula de Euler</p> 
+            $$e^{i\omega}=\cos{\omega}+i\,\sin{\omega}$$
+            <p style="text-align: center;">Nos queda la solución genreal de la siguiente forma</p>
+            $$y=e^{ax}\,(C_1\,\cos{bx}+C_2\,\sin{bx})$$
+            <h4>Ejemplo 1</h4>
+            $$y'''-7\,y'+6\,y=0$$
+            $$r^3-7\,r+6=0$$
+            $$(r-1)(r+3)(r-2)=0$$
+            $$y = C_1\,e^{x}+C_2\,e^{-3x}+C_3\,e^{2x} \qquad \mathrm{Solucion\,Genreal}$$
+            <h4>Ejemplo 2</h4>
+            $$r'''-6\,y'+13\,y=0$$
+            $$r^2-6\,r+13=0$$
+            $$r=3 \pm 2\,i$$
+            $$y=e^{3x}\,(C_1\,\cos{2x}+C_2\,\sin{2x}) \qquad \mathrm{Solucion\,Genreal}$$
+
+            <br>
+            <p style="text-align: center;">Se trabaja con la EDO</p>
+            $$R' = \alpha_1\,R - \beta_1\,R\,F$$
+            $$F' = -\alpha_2\,F + \beta_2\,R\,F $$
+
+
+
+            $$\mathrm{det} (\lambda I-A) = \begin{bmatrix} 
+                \lambda & 0 \\  0 & \lambda
+                \end{bmatrix} - \begin{bmatrix} 
+                \alpha_1 & -\beta_1 \\ -\alpha_2 & \beta_2
+                \end{bmatrix}$$
+            $$\mathrm{det} (\lambda I-A) = \begin{bmatrix} 
+                \lambda-\alpha_1 & \beta_1 \\  \alpha_2 & \lambda-\beta_2
+                \end{bmatrix}$$
+                
+            $$ \mathrm{det} (\lambda I-A) = (\lambda-\alpha_1)\,(\lambda-\beta_2)-(\alpha_2)\,(\beta_1)$$
+            $$ \mathrm{det} (\lambda I-A) = \lambda^2 - (\alpha_1+\beta_2)\,\lambda+\alpha_1\,\beta_2-\alpha_2\,\beta_1$$
+            $$ \mathrm{det} (\lambda I-A) = 0$$
+            $$ \lambda = \dfrac{\alpha_1+\beta_2 \pm \sqrt{(\alpha_1+\beta_2)^2-4\,(\alpha_1\,\beta_2-\alpha_2\,\beta_1)}}{2}$$
+            $$ \lambda_1= 2.6758$$
+            $$ \lambda_2 = 0.2242$$
+
+            <p style="text-align: center;">Autovectores</p>
+            $$(\lambda I-A)V_1=0$$
+            $$\begin{bmatrix} 
+                \lambda-\alpha_1 & \beta_1 \\  \alpha_2 & \lambda-\beta_2
+                \end{bmatrix} \,\begin{bmatrix} 
+                v_1 \\ v_2
+                \end{bmatrix} = \begin{bmatrix} 
+                0 \\ 0
+                \end{bmatrix}$$
+
+            Para $\lambda_1$
+            
+            $$\begin{bmatrix} 
+                \lambda-\alpha_1 & \beta_1 \\  \alpha_2 & \lambda-\beta_2
+                \end{bmatrix} \,\begin{bmatrix} 
+                v_1 \\ v_2
+                \end{bmatrix} = \begin{bmatrix} 
+                0 \\ 0
+                \end{bmatrix}$$
+            $$\begin{bmatrix} 
+                0.6758 & 1.2 \\  1 & 1.7758
+                \end{bmatrix} \,\begin{bmatrix} 
+                v_1 \\ v_2
+                \end{bmatrix} = \begin{bmatrix} 
+                0 \\ 0
+                \end{bmatrix}$$
+                
+            <p style="text-align: center;">Se realiza lo respectivos reemplazos.</p> 
+            $$ \left \{ \begin{array}{ll} 
+            0.6758\,v_1+1.2\,v_2=0\\ v_1+1.7758\,v_2=0\\
+            \end{array}\right.$$
+            $$ \left \{ \begin{array}{ll} 
+            v_1+1.7758\,v_2=0\\ v_1+1.7758\,v_2=0\\
+            \end{array}\right.$$$$ \left \{ \begin{array}{ll} 
+            v_1=-1.7758\,v_2\\ v_1=-1.7758\,v_2\\
+            \end{array}\right.$$
+            Si $v_1=1 \qquad \rightarrow \qquad v_2=-0.5631$
+            $$V_1 = \begin{bmatrix} 
+            1 \\ -0.5631
+                \end{bmatrix}$$
+
+            Para $\lambda_2$
+            
+            $$\begin{bmatrix} 
+                \lambda-\alpha_1 & \beta_1 \\  \alpha_2 & \lambda-\beta_2
+                \end{bmatrix} \,\begin{bmatrix} 
+                v_1 \\ v_2
+                \end{bmatrix} = \begin{bmatrix} 
+            0 \\ 0
+                \end{bmatrix}$$
+            $$\begin{bmatrix} 
+                -1.7758 & 1.2 \\  1 & -0.6758
+                \end{bmatrix} \,\begin{bmatrix} 
+                v_1 \\ v_2
+                \end{bmatrix} = \begin{bmatrix} 
+            0 \\ 0
+                \end{bmatrix}$$
+            
+            
+            <p style="text-align: center;">Se realiza lo respectivos reemplazos.</p> 
+            $$ \left \{ \begin{array}{ll} 
+            -1.7758\,v_1+1.2\,v_2=0\\ v_1-0.6758\,v_2=0\\
+            \end{array}\right.$$
+            $$ \left \{ \begin{array}{ll} 
+            1.7758\,v_1=1.2\,v_2\\ v_1=0.6758\,v_2\\
+            \end{array}\right.$$
+            Si $v_1=1 \qquad \rightarrow \qquad v_2=1.4797$
+            $$V_2 = \begin{bmatrix} 
+            1 \\ 1.4797
+                \end{bmatrix}$$
+
+            
+            <p style="text-align: center;">Solución analítica</p>    
+            $$\begin{bmatrix} 
+            R \\ F
+                \end{bmatrix}\,(t) = C_1\,\begin{bmatrix} 
+            1 \\ -0.5631
+                \end{bmatrix}\,e^{2.6758\,t} + C_2\,\begin{bmatrix} 
+            1 \\ 1.4797
+                \end{bmatrix}\,e^{0.2242\,t}$$
+                
+            <p style="text-align: center;">Se reemplaza condiciones iniciales</p>
+            $$\begin{bmatrix} 
+            200 \\ 400
+                \end{bmatrix} = C_1\,\begin{bmatrix} 
+            1 \\ -0.5631
+                \end{bmatrix} + C_2\,\begin{bmatrix} 
+            1 \\ 1.4797
+                \end{bmatrix}$$
+                
+                $$\begin{bmatrix} 
+            1 & 1\\ -0.5631 & 1.4797
+                \end{bmatrix} \,\begin{bmatrix} 
+            C_1 \\ C_2
+                \end{bmatrix}=\begin{bmatrix} 
+            200 \\ 400
+                \end{bmatrix}$$
+                
+                $$\begin{bmatrix} 
+            C_1 \\ C_2
+                \end{bmatrix}=\begin{bmatrix} 
+            -50.9399 \\ 250.9399
+                \end{bmatrix}$$
+
+            <p style="text-align: center;">La ecuación analítica queda entonces:</p>
+            $$\begin{bmatrix} 
+            R \\ F
+                \end{bmatrix}\,(t) = -50.9399\,\begin{bmatrix} 
+            1 \\ -0.5631
+                \end{bmatrix}\,e^{2.6758\,t} + 250.9399\,\begin{bmatrix} 
+            1 \\ 1.4797
+                \end{bmatrix}\,e^{0.2242\,t}$$
+                
+                
+            <p style="text-align: center;">Se deriva la primera ecuación</p>
+                
+            $$R'' = \alpha_1\,R' - \beta_1\, \left[ R\,F' + F\,R' \right] $$
+            <p style="text-align: center;">Reemplazamos la segunda ecuación del sistema</p>
+            $$R'' = \alpha_1\,R' - \beta_1\, \left[ R\, \left( -\alpha_2\,F + \beta_2\,R\,F \right) + F\,R' \right] $$
+            $$R'' = \alpha_1\,R' - \beta_1\, \left( - R\,\alpha_2\,F + \beta_2\,R^2\,F  + F\,R' \right) $$
+            $$R'' - \left( \alpha_1-\beta_1\,F \right)\,R' +  \beta_1\,R\, \left( - \alpha_2\,F + \beta_2\,R\,F \right) = 0$$
+        </div>
+    </section>
+
+    <div class="class_machetes" id="id_machetes">
+      <a type="submit" onclick="btn_fisica()"> ☞ Física</a>
+  </div>
+
+  <section class="class_fisica">
+      <div class="contenido">
+          <h2 align="center">VECTORES</h2>
+          $$ \vec{\mu_A} = \frac{\vec{A}}{A} $$
+          $$ \vec{A} \cdot \vec{B} = A \, B\, \cos{\theta} $$
+          $$ \vec{A} \times \vec{B} = A \, B\, \sin{\theta} $$
+          <h2 align="center">MOVIMIENTO RECTILINEO UNIFORME (MRU)</h2>
+          <h4 align="center" style="color: green;">Escalar</h4>
+          $$ d = vt $$
+          <h4 align="center" style="color: green;">Vector</h4>
+          $$ \vec{\Delta_r} = \vec{v}\,t $$
+          <h2 align="center">MOVIMIENTO RECTILINEO UNIFORMEMENTE VARIADO (MRUV)</h2>
+          <h4 align="center" style="color: green;">Escalar</h4>
+          $$ v_f = v_o + at $$
+          $$ v_f^2 = v_o^2 + 2ad $$
+          $$ d = v_ot + \frac{1}{2}at^2 $$
+          <h4 align="center" style="color: green;">Vector</h4>
+          $$ \vec{v}_f = \vec{v_o} + \vec{a}t $$
+          $$ \vec{v}_f^2 = \vec{v_o}^2 + 2\vec{a}\,\vec{\Delta_r} $$
+          $$ \vec{\Delta_r} = \vec{v_o}\,t + \frac{1}{2}\,\vec{a}\,t^2 $$
+          <h2 align="center">MOVIMIENTO PARABÓLICO</h2>
+          <h4 align="center" style="color: green;">Movimiento Horizontal</h4>
+          $$ d_x = v_xt $$
+          <h4 align="center" style="color: green;">Movimiento Vertical y Caida Libre</h4>
+          $$ v_y = v_{oy} + gt $$
+          $$ v_y^2 = v_{oy}^2 + 2gh $$
+          $$ h = v_{oy}t + \frac{1}{2}\,g\,t^2 $$
+          $$ \vec{a}= (\vec{g} \cdot \vec{\mu_v})\,\vec{\mu_v}$$
+          $$ \vec{a_c}= \vec{a_T} - \vec{a}$$
+          <h2 align="center">MOVIMIENTO CIRCULAR UNIFORMEMENTE VARIADO (MCUV)</h2>
+          $$ w = w_o + \alpha\,t $$
+          $$ w^2 = w_o^2 + 2\,\alpha\,\Delta\theta $$
+          $$ \Delta\theta = w_ot + \frac{1}{2}\,\alpha\,t^2 $$
+          <h4 align="center" style="color: green;">Lineales o Tangenciales</h4>
+          $$ l = \Delta\theta\,r$$
+          $$ v = w\,r$$
+          $$ a = \alpha\,r$$
+          <h4 align="center" style="color: green;">Complementos</h4>
+          $$ a_c = w^2\,r = \frac{v^2}{r}$$
+          $$ w = 2\,\pi\,f$$
+          $$ T = \frac{1}{f}$$
+          $$ \vec{a_T}= \vec{a} + \vec{a_c}$$
+      </div>
+  </section>
+
 </div>
 
 <style>

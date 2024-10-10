@@ -16,12 +16,12 @@
       content="EL FISICO MATEMATICO ofrece capacitaciones y servicios relacionados con la educación en todos los niveles"
     />
     <meta property="og:image" content="static/img/Fisico/logo/logo_fm.png" />
-    <meta property="og:url" content="https://einsphi.com/ElFisicoMatematico" />
+    <meta property="og:url" content="https://ElFisicoMatematico" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="EINSPHI" />
+    <meta property="og:site_name" content="EL FISICO MATEMATICO" />
 
     <!-- Open Graph Meta Tags -->
-    <title>EINSPHI</title>
+    <title>EL FISICO MATEMATICO</title>
     <link
       rel="icon"
       type="image/ico"
@@ -85,29 +85,26 @@
 
       <nav>
         <ul class="menu_h">
-          <li><a href="inicio">Inicio</a></li>
           <li>
-            <a href="#">El Físico Matemático</a>
+            <a onclick="loadContent(`templates/inicio.html`)">Inicio</a>
+          </li>
+          <li>
+            <a>El Físico Matemático</a>
             <ul class="menu_v">
               <li>
-                <a
-                  href="#"
-                  onclick="loadContent(`templates/ElFisicoMatematico.html`)"
+                <a onclick="loadContent(`templates/ElFisicoMatematico.html`)"
                   >Información
                 </a>
               </li>
               <li>
-                <a href="#" onclick="loadContent(`templates/formulario.html`)"
+                <a onclick="loadContent(`templates/formulario.html`)"
                   >Formularios
                 </a>
               </li>
-              <li><a href="locales_fisicos">Registros </a></li>
             </ul>
           </li>
           <li>
-            <a href="#" onclick="loadContent(`templates/contactos.html`)"
-              >Contactos</a
-            >
+            <a onclick="loadContent(`templates/contactos.html`)">Contactos</a>
           </li>
         </ul>
       </nav>
@@ -127,15 +124,17 @@
       </a>
 
       <div class="footer-column">
-        <h3><a href="empresa"></a>Sobre Nosotros</h3>
+        <h3>Sobre Nosotros</h3>
         <p>
-          Es una empresa de ingeniería, especialista en trabajos en altura y de
-          difícil acceso.
+          Es una empresa de ingeniería, especialista en capacitación profesional
+          y académica.
         </p>
       </div>
 
       <div class="footer-column">
-        <h3><a href="contactos"></a>Contacto</h3>
+        <h3>
+          <a onclick="loadContent(`templates/contactos.html`)"></a>Contacto
+        </h3>
         <ul>
           <li>Email: dramirez91@einsphi.com</li>
           <li>Teléfono: 0998998947 - 0961940111</li>

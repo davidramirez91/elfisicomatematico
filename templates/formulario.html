@@ -1,0 +1,94 @@
+<div class="class_form_analiticos">
+  <a type="submit" onclick="btn_identidades()">
+    <div class="class_machetes" id="id_machetes">Identidades</div>
+  </a>
+
+  <section class="class_identidades">
+    <div class="contenido">
+      <h2 align="center">IDENTIDADES TRIGONOMÉTRICAS</h2>
+      $$ \sin^2{\alpha} + \cos^2{\alpha} = 1 $$
+    </div>
+    <div class="contenido">
+      <h2 align="center">LÍMITES</h2>
+      $$ \lim_{x \to 0}{\dfrac{\sin{x}}{x}} = \lim_{x \to 0}{\dfrac{x}{\sin{x}}}
+      = 1$$ $$ \lim_{x \to 0}{\dfrac{\tan{x}}{x}} = \lim_{x \to
+      0}{\dfrac{x}{\tan{x}}} = 1$$ $$ \lim_{x \to 0}{\dfrac{1-\cos{x}}{x}} = 0$$
+      $$ \lim_{x \to 0}{\dfrac{\ln{(1+x)}}{x}} = 1$$ $$ \lim_{x \to
+      0}{(1+x)^{\frac{1}{x}}} = \lim_{x \to
+      \infty}{\left(1+\dfrac{1}{x}\right)^{x}} = e$$
+    </div>
+    <div class="contenido">
+      <h2 align="center">LOGARITMOS</h2>
+      $$ \log{a^n} = n\,\log{a} $$ $$ \log{ab} = \log{a} + \log{b} $$ $$
+      \log{\left(\dfrac{a}{b}\right)} = \log{a} - \log{b} $$ $$ \log_b{a} =
+      \dfrac{\log_n{a}}{\log_n{b}} $$ $$ \log{1} = 0 $$ $$ \log_a{a} = 1 $$ $$
+      \log_e{a} = \ln{a} $$ $$ \ln{e} = 1 $$ $$ \log_a{x} = b \quad \rightarrow
+      \quad x = a^b $$ $$ \ln{x} = b \quad \rightarrow \quad x = e^b $$
+    </div>
+    <div class="contenido">
+      <h2 align="center">EXPANSIÓN TAYLOR</h2>
+      <p style="text-align: center">
+        Polinomio de Taylor / Polinomio de MacLaurin ($x_o=0$)
+      </p>
+      $$ P_n(x) = \sum_{i=0}^{n}{\dfrac{(x-x_0)^i}{i!}\,\dfrac{d^if(x_0)}{dx^i}}
+      $$ $$ P_n(x) = f(x_0) + (x-x_0)\,\dfrac{df(x_0)}{dx} +
+      \dfrac{(x-x_0)^2}{2!}\,\dfrac{d^2f(x_0)}{dx^2} + ...
+      \dfrac{(x-x_0)^n}{n!}\,\dfrac{d^nf(x_0)}{dx^n} $$ $$ F(x,y) = f(x,y)_0 +
+      (x-x_0)\, \left. \dfrac{F(x,y)}{dx} \right|_{(x,y)_0} + (y-y_0)\, \left.
+      \dfrac{F(x,y)}{dy} \right|_{(x,y)_0} $$
+    </div>
+    <div class="contenido">
+      <h2 align="center">SERIES DE FOURIER</h2>
+      $$ f(t) = \dfrac{a_0}{2} + \sum^{\infty}_{n=1} a_n\,\cos{\left( \omega n
+      t\right)} + \sum^{\infty}_{n=1} b_n\,\sin{\left( \omega n t\right)}$$ $$
+      a_0 = \dfrac{2}{T}\,\int^{T/2}_{-T/2}{f(t)\,dt} $$ $$ a_n =
+      \dfrac{2}{T}\,\int^{T/2}_{-T/2}{f(t)\,\cos{\left( \omega n t\right)}\,dt}
+      $$ $$ b_n = \dfrac{2}{T}\,\int^{T/2}_{-T/2}{f(t)\,\sin{\left( \omega n
+      t\right)}\,dt} $$
+    </div>
+  </section>
+</div>
+
+<style>
+  .class_form_analiticos {
+    z-index: 1;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .class_form_analiticos a {
+    background-color: #003777;
+    padding: 10px;
+    text-align: center;
+    margin: 20px;
+    max-width: 100%;
+    width: 400px;
+    border-radius: 10px;
+  }
+
+  #id_machetes {
+    color: aliceblue;
+  }
+
+  /************** FORMULARIOS ************/
+  .class_identidades,
+  .class_derivadas,
+  .class_integrales,
+  .class_edos,
+  .class_fisica {
+    display: none;
+    transform: translate(-1500px);
+    position: absolute;
+  }
+  .class_identidades-show,
+  .class_derivadas-show,
+  .class_integrales-show,
+  .class_edos-show,
+  .class_fisica-show {
+    display: block;
+    background-color: rgba(150, 73, 22, 0.15);
+    transform: translate(2px);
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+  }
+</style>

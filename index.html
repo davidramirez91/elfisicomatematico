@@ -36,6 +36,37 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="static/css/estilo.css" />
+
+    <!-- JAVASCRITPS INICIO-->
+    <!-- LATEX -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <!-- Configuración de MathJax -->
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+
+    <!-- Script de MathJax -->
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
   </head>
   <body>
     <header>
@@ -65,20 +96,19 @@
                   >Información
                 </a>
               </li>
-              <li><a href="formulario">Formularios </a></li>
+              <li>
+                <a href="#" onclick="loadContent(`templates/formulario.html`)"
+                  >Formularios
+                </a>
+              </li>
               <li><a href="locales_fisicos">Registros </a></li>
             </ul>
           </li>
           <li>
-            <a href="#">Los Cuyerones</a>
-            <ul class="menu_v">
-              <li><a href="loscuyerones">Cerámica </a></li>
-              <li><a href="loscuyerones">Amigurumis</a></li>
-              <li><a href="loscuyerones">Arte en Barro </a></li>
-              <li><a href="loscuyerones">Velas Decorativas</a></li>
-            </ul>
+            <a href="#" onclick="loadContent(`templates/contactos.html`)"
+              >Contactos</a
+            >
           </li>
-          <li><a href="contactos">Contactos</a></li>
         </ul>
       </nav>
     </header>
@@ -140,33 +170,59 @@
     />
 
     <!-- JAVASCRITPS -->
-    <!-- LATEX -->
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script>
+    <script type="text/javascript">
       // Funciones
       function loadContent(page) {
         fetch(page)
           .then((response) => response.text())
           .then((data) => {
             document.getElementById("content").innerHTML = data;
+
+            // Crear un nuevo elemento script y agregarlo al DOM
+            if (
+              page !== "templates/inicio.html" &&
+              page !== "templates/contactos.html"
+            ) {
+              const scriptElement = document.createElement("script");
+              const pagina = page.replace(/^.*[\\/]/, "").replace(".html", "");
+              scriptElement.src = `static/js/${pagina}.js`;
+              scriptElement.type = "text/javascript";
+              document.body.appendChild(scriptElement);
+            }
+
+            // Reprocesar el contenido para que MathJax renderice las ecuaciones
+            if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+              MathJax.typesetPromise()
+                .then(() => {
+                  console.log("La ecuación se ha renderizado correctamente.");
+                })
+                .catch((err) => {
+                  console.error(
+                    "Error al renderizar la ecuación:",
+                    err.message
+                  );
+                });
+            }
           })
           .catch((error) => console.log("Error al cargar la página: ", error));
       }
 
-      // Eventos
       document.addEventListener("DOMContentLoaded", () => {
         loadContent("templates/inicio.html");
+
         const btn_menu = document.querySelector(".img_menu_btn");
         const menu_hori = document.querySelector(".menu_h");
 
         btn_menu.addEventListener("click", (e) => {
           menu_hori.classList.toggle("menu_h_show");
         });
+
         document.addEventListener("keydown", (e) => {
           if (e.key === "Escape") {
             menu_hori.classList.remove("menu_h_show");
           }
         });
+
         document.addEventListener("click", (e) => {
           if (!btn_menu.contains(e.target) && !menu_hori.contains(e.target)) {
             menu_hori.classList.remove("menu_h_show");

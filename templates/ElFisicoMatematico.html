@@ -83,14 +83,164 @@
   </section>
 </div>
 
-<!-- JAVASCRITPS -->
-<script type="module">
-  async function loadHoras() {
-    const response = await fetch("templates/horas.json");
-    const dt = await response.json();
-    console.log(dt);
+<!-- ----------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------- css style ----------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------- -->
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+  .FM_seccion {
+    display: block;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgb(255, 255, 255);
   }
-  document.addEventListener("DOMContentLoaded", () => {
-    loadHoras();
-  });
-</script>
+
+  .header {
+    background-color: #29675b;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .titulo {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+  }
+
+  .content-list p {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s;
+  }
+
+  .content-list p:hover {
+    background-color: #b14444;
+  }
+
+  .content-images img {
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: transform 0.2s;
+  }
+
+  .content-images img:hover {
+    transform: scale(1.1);
+  }
+
+  /* planes*/
+  #id_contenido_planes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0px 30px;
+  }
+  .class_cuadro_planes {
+    background-color: #15297c;
+    gap: 50px;
+    margin: 10px auto;
+    padding: 10px 30px;
+    border: 3px solid black;
+    outline: 3px solid red;
+    border-radius: 15px;
+    width: 95%;
+    max-width: 700px;
+    color: #8fe3ff;
+  }
+  .class_contenido_todo_informacion {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  }
+  .class_infos {
+    padding: 5px 5px;
+    background-color: #8fe3ff;
+    color: black;
+    border: 3px solid black;
+    /*outline: 3px solid red;*/
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+  .content-horarios,
+  .content-precios {
+    padding: 20px;
+    border-radius: 5px;
+  }
+  .img_chicos_estudiando {
+    transition: transform 0.2s;
+    height: 200px;
+    width: auto;
+    margin-left: 20px;
+  }
+  .img_chicos_estudiando:hover {
+    transform: scale(1.1);
+  }
+
+  .img_horas {
+    transition: transform 0.2s;
+    height: 100px;
+    width: auto;
+  }
+
+  .FM_seccion h2 {
+    margin-top: 0;
+    color: #2e77d0;
+    border-bottom: 2px solid #2e77d0;
+    padding-bottom: 10px;
+  }
+
+  .form-title {
+    color: #2e77d0;
+    margin-bottom: 10px;
+  }
+
+  .class_machetes {
+    padding: 10px;
+    display: block;
+  }
+
+  .form-link {
+    background-color: #2e77d0;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+
+  .form-link:hover {
+    background-color: #ca0d16;
+    text-decoration: none;
+  }
+
+  /* ----------------------------------------------*/
+  /* ------------------ CELULAR -------------------*/
+  /* ----------------------------------------------*/
+
+  @media (max-width: 700px) {
+    #id_contenido_planes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      width: 90%;
+      max-width: 500px;
+      margin: 1px 1px 10px 1px;
+      padding: 1px 1px 10px 1px;
+    }
+    .class_cuadro_planes {
+      background-color: #15297c;
+      margin: 1px 1px 20px 1px;
+      padding: 2px;
+      border: 3px solid black;
+      outline: 3px solid red;
+      border-radius: 15px;
+      width: 95%;
+    }
+  }
+</style>

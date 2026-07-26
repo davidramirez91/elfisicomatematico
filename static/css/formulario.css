@@ -189,3 +189,46 @@
     width: 100%;
   }
 }
+
+.formula-tab:focus-visible,
+.btn-print:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--secondary) 58%, transparent);
+  outline-offset: 3px;
+}
+
+.formula-panel {
+  scroll-margin-top: calc(var(--header-height) + 92px);
+}
+
+.formula-card {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formula-card:hover {
+  border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 620px) {
+  .formula-toolbar {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .formula-tab {
+    width: 100%;
+  }
+
+  .formula-card {
+    padding: 17px;
+  }
+
+  .formula-card table {
+    min-width: 520px;
+  }
+
+  .formula-card.wide {
+    overflow-x: auto;
+  }
+}
+

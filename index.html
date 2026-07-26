@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="format-detection" content="telephone=yes" />
-    <meta name="theme-color" content="#f7f9fc" />
+    <meta name="theme-color" content="#08151c" />
 
     <title>EL FÍSICO MATEMÁTICO</title>
     <meta
@@ -18,11 +18,11 @@
     <meta name="author" content="EL FÍSICO MATEMÁTICO" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Reemplaza estas URL cuando conozcas la dirección final de GitHub Pages. -->
     <link
       rel="canonical"
       href="https://davidramirez91.github.io/elfisicomatematico/"
     />
+
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_EC" />
     <meta property="og:site_name" content="EL FÍSICO MATEMÁTICO" />
@@ -37,10 +37,10 @@
     />
     <meta
       property="og:image"
-      content="https://davidramirez91.github.io/elfisicomatematico/static/img/og-cover.png"
+      content="https://davidramirez91.github.io/elfisicomatematico/static/img/logo.png"
     />
     <meta property="og:image:width" content="2130" />
-    <meta property="og:image:height" content="1000" />
+    <meta property="og:image:height" content="2130" />
     <meta
       property="og:image:alt"
       content="EL FÍSICO MATEMÁTICO - Capacitaciones y nivelaciones"
@@ -54,7 +54,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://davidramirez91.github.io/elfisicomatematico/static/img/og-cover.png"
+      content="https://davidramirez91.github.io/elfisicomatematico/static/img/logo.png"
     />
 
     <link rel="icon" type="image/png" href="./static/img/favicon.png" />
@@ -67,6 +67,24 @@
       rel="stylesheet"
     />
 
+    <!-- Aplica el tema guardado antes de cargar el CSS y evita parpadeos. -->
+    <script>
+      (() => {
+        let theme = "dark";
+
+        try {
+          theme =
+            localStorage.getItem("efm-theme") === "light" ? "light" : "dark";
+        } catch {
+          // Si localStorage está bloqueado, se conserva el tema oscuro.
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute("content", theme === "dark" ? "#08151c" : "#f7f9fc");
+      })();
+    </script>
     <link rel="stylesheet" href="./static/css/styles.css" />
     <link rel="stylesheet" href="./static/css/formulario.css" />
 
@@ -105,7 +123,24 @@
 
     <header class="site-header" id="site-header">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <img src="./static/img/logo.png" alt="Logo de EL FÍSICO MATEMÁTICO" />
+        <span class="brand-logo" aria-hidden="true">
+          <img
+            class="brand-logo-image brand-logo-image--dark"
+            src="./static/img/logo.png"
+            alt=""
+            width="60"
+            height="60"
+            decoding="async"
+          />
+          <img
+            class="brand-logo-image brand-logo-image--light"
+            src="./static/img/logo_2.png"
+            alt=""
+            width="60"
+            height="60"
+            decoding="async"
+          />
+        </span>
         <span class="brand-copy">
           <strong>EL FÍSICO MATEMÁTICO</strong>
           <small>Comprende, practica y destaca</small>
@@ -125,7 +160,30 @@
 
       <nav class="main-menu" id="main-menu" aria-label="Navegación principal">
         <a href="#inicio" data-route="inicio">INICIO</a>
-        <a href="#empresa" data-route="empresa">EL FÍSICO MATEMÁTICO</a>
+
+        <div class="menu-item menu-item--submenu">
+          <button
+            class="submenu-trigger"
+            id="submenu-trigger"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="company-submenu"
+          >
+            <span>EL FÍSICO MATEMÁTICO</span>
+            <span class="submenu-arrow" aria-hidden="true">⌄</span>
+          </button>
+
+          <div
+            class="submenu"
+            id="company-submenu"
+            aria-label="Opciones de EL FÍSICO MATEMÁTICO"
+          >
+            <a href="#precios" data-route="precios">PRECIOS</a>
+            <a href="#formularios" data-route="formularios">FORMULARIOS</a>
+          </div>
+        </div>
+
         <a href="#contactos" data-route="contactos">CONTACTOS</a>
       </nav>
 
@@ -133,11 +191,11 @@
         class="theme-toggle"
         id="theme-toggle"
         type="button"
-        aria-label="Cambiar tema"
-        title="Cambiar entre modo claro y oscuro"
+        aria-label="Activar modo claro"
+        title="Cambiar a modo claro"
       >
-        <span class="theme-icon" aria-hidden="true">☾</span>
-        <span class="theme-text">Oscuro</span>
+        <span class="theme-icon" aria-hidden="true">☀</span>
+        <span class="theme-text">Claro</span>
       </button>
     </header>
 
@@ -169,8 +227,8 @@
       <section>
         <h2>Sobre nosotros</h2>
         <p>
-          Formación personalizada en ciencias, ingeniería y tecnología para
-          aprender con bases sólidas y aplicar el conocimiento.
+          Formación personalizada en ciencias, ingeniería y tecnología con bases
+          sólidas y aplicación práctica.
         </p>
       </section>
       <section>
@@ -182,13 +240,13 @@
         <h2>Redes sociales</h2>
         <div class="social-links">
           <a
-            href="https://www.facebook.com/"
+            href="https://www.facebook.com/elfisicomatematico"
             target="_blank"
             rel="noopener noreferrer"
             >Facebook</a
           >
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/elfisicomatematico"
             target="_blank"
             rel="noopener noreferrer"
             >Instagram</a

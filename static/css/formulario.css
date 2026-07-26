@@ -1,0 +1,191 @@
+.formula-page .section-heading {
+  max-width: 900px;
+}
+
+.formula-toolbar {
+  position: sticky;
+  top: calc(var(--header-height) + 10px);
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+  padding: 12px;
+  gap: 9px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface-solid) 92%, transparent);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+}
+
+.formula-tab {
+  flex: 1 1 145px;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  background: var(--surface-muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+
+.formula-tab:hover,
+.formula-tab.is-active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  transform: translateY(-1px);
+}
+
+.formula-empty {
+  display: grid;
+  min-height: 280px;
+  padding: 38px;
+  place-items: center;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-soft);
+  background: color-mix(in srgb, var(--surface-solid) 72%, transparent);
+  text-align: center;
+}
+
+.formula-empty strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--primary-strong);
+  font-size: 1.12rem;
+}
+
+.formula-panel {
+  display: none;
+}
+
+.formula-panel.is-active {
+  display: block;
+  animation: page-in 0.32s ease both;
+}
+
+.formula-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 22px;
+  gap: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: linear-gradient(125deg, color-mix(in srgb, var(--primary) 12%, var(--surface-solid)), var(--surface-solid));
+  box-shadow: var(--shadow-soft);
+}
+
+.formula-panel-header h2 {
+  margin: 0;
+  color: var(--primary-strong);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(1.35rem, 3vw, 2.05rem);
+}
+
+.formula-panel-header p {
+  margin: 4px 0 0;
+  color: var(--text-soft);
+}
+
+.btn-print {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--secondary), #9b6113);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--secondary) 24%, transparent);
+}
+
+.formula-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.formula-card {
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.formula-card.wide {
+  grid-column: 1 / -1;
+}
+
+.formula-card h3 {
+  margin: 0 0 14px;
+  color: var(--primary-strong);
+  font-size: 1.05rem;
+}
+
+.formula-card h4 {
+  margin: 20px 0 8px;
+  color: var(--secondary);
+}
+
+.formula-card p,
+.formula-card li {
+  color: var(--text-soft);
+}
+
+.formula-card table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.formula-card th,
+.formula-card td {
+  padding: 9px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.formula-card th {
+  color: var(--primary-strong);
+  background: var(--surface-muted);
+}
+
+.formula-note {
+  padding: 13px 15px;
+  border-left: 4px solid var(--secondary);
+  border-radius: 0 10px 10px 0;
+  color: var(--text-soft);
+  background: var(--secondary-soft);
+}
+
+@media (max-width: 790px) {
+  .formula-toolbar {
+    position: static;
+  }
+
+  .formula-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formula-card.wide {
+    grid-column: auto;
+  }
+
+  .formula-panel-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .btn-print {
+    width: 100%;
+  }
+}

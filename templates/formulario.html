@@ -1,0 +1,861 @@
+<section class="page-section formula-page">
+  <header class="section-heading">
+    <span class="eyebrow">Biblioteca de consulta</span>
+    <h1>Formulario de Matemática, Cálculo y Física</h1>
+    <p>
+      Selecciona un tema para desplegar sus fórmulas. Cada bloque puede abrirse
+      en una pestaña A4 independiente, con encabezado, pie de página y marca de
+      agua, listo para imprimir o guardar como PDF.
+    </p>
+  </header>
+
+  <div class="formula-toolbar" role="tablist" aria-label="Temas del formulario">
+    <button
+      class="formula-tab"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      data-formula-target="formula-identidades"
+    >
+      Identidades
+    </button>
+    <button
+      class="formula-tab"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      data-formula-target="formula-derivadas"
+    >
+      Cálculo 1 · Derivadas
+    </button>
+    <button
+      class="formula-tab"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      data-formula-target="formula-integrales"
+    >
+      Cálculo 2 · Integrales
+    </button>
+    <button
+      class="formula-tab"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      data-formula-target="formula-edos"
+    >
+      Cálculo 3 · Ecuaciones diferenciales
+    </button>
+    <button
+      class="formula-tab"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      data-formula-target="formula-fourier"
+    >
+      Cálculo 4 · Fourier y Taylor
+    </button>
+    <button
+      class="formula-tab"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      data-formula-target="formula-fisica"
+    >
+      Física
+    </button>
+  </div>
+
+  <div class="formula-empty" id="formula-empty">
+    <div>
+      <strong>Selecciona un tema</strong>
+      Las fórmulas aparecerán aquí y se habilitará su opción de impresión.
+    </div>
+  </div>
+
+  <article class="formula-panel" id="formula-identidades" role="tabpanel">
+    <header class="formula-panel-header">
+      <div>
+        <h2>Identidades trigonométricas</h2>
+        <p>Relaciones fundamentales, círculo unitario y triángulos notables.</p>
+      </div>
+      <button
+        class="btn-print"
+        type="button"
+        data-print-section="formula-identidades"
+      >
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card">
+        <h3>Identidades recíprocas y de cociente</h3>
+        $$\csc\theta=\frac{1}{\sin\theta},\qquad
+        \sin\theta=\frac{1}{\csc\theta}$$
+        $$\sec\theta=\frac{1}{\cos\theta},\qquad
+        \cos\theta=\frac{1}{\sec\theta}$$
+        $$\cot\theta=\frac{1}{\tan\theta},\qquad
+        \tan\theta=\frac{1}{\cot\theta}$$
+        $$\tan\theta=\frac{\sin\theta}{\cos\theta},\qquad
+        \cot\theta=\frac{\cos\theta}{\sin\theta}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Identidades pitagóricas</h3>
+        $$\sin^2\theta+\cos^2\theta=1$$ $$1+\tan^2\theta=\sec^2\theta$$
+        $$1+\cot^2\theta=\csc^2\theta$$ $$\sin^2\theta=1-\cos^2\theta,\qquad
+        \cos^2\theta=1-\sin^2\theta$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Paridad, periodicidad y cofunciones</h3>
+        $$\sin(-\theta)=-\sin\theta,\quad \cos(-\theta)=\cos\theta,\quad
+        \tan(-\theta)=-\tan\theta$$ $$\sin(\theta+2\pi)=\sin\theta,\quad
+        \cos(\theta+2\pi)=\cos\theta$$ $$\tan(\theta+\pi)=\tan\theta$$
+        $$\sin\left(\frac{\pi}{2}-\theta\right)=\cos\theta,\quad
+        \cos\left(\frac{\pi}{2}-\theta\right)=\sin\theta$$
+        $$\tan\left(\frac{\pi}{2}-\theta\right)=\cot\theta,\quad
+        \sec\left(\frac{\pi}{2}-\theta\right)=\csc\theta$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Suma y diferencia de ángulos</h3>
+        $$\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\cos\alpha\sin\beta$$
+        $$\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta$$
+        $$\tan(\alpha\pm\beta)=\frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ángulo doble y triple</h3>
+        $$\sin(2\theta)=2\sin\theta\cos\theta$$
+        $$\cos(2\theta)=\cos^2\theta-\sin^2\theta=1-2\sin^2\theta=2\cos^2\theta-1$$
+        $$\tan(2\theta)=\frac{2\tan\theta}{1-\tan^2\theta}$$
+        $$\sin(3\theta)=3\sin\theta-4\sin^3\theta$$
+        $$\cos(3\theta)=4\cos^3\theta-3\cos\theta$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ángulo mitad y reducción de potencias</h3>
+        $$\sin^2\left(\frac{\theta}{2}\right)=\frac{1-\cos\theta}{2}$$
+        $$\cos^2\left(\frac{\theta}{2}\right)=\frac{1+\cos\theta}{2}$$
+        $$\tan\left(\frac{\theta}{2}\right)=\frac{\sin\theta}{1+\cos\theta}=\frac{1-\cos\theta}{\sin\theta}$$
+        $$\sin^2\theta=\frac{1-\cos(2\theta)}{2},\qquad
+        \cos^2\theta=\frac{1+\cos(2\theta)}{2}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Producto a suma</h3>
+        $$\sin\alpha\sin\beta=\frac{1}{2}\left[\cos(\alpha-\beta)-\cos(\alpha+\beta)\right]$$
+        $$\cos\alpha\cos\beta=\frac{1}{2}\left[\cos(\alpha-\beta)+\cos(\alpha+\beta)\right]$$
+        $$\sin\alpha\cos\beta=\frac{1}{2}\left[\sin(\alpha+\beta)+\sin(\alpha-\beta)\right]$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Suma a producto</h3>
+        $$\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)$$
+        $$\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)$$
+        $$\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)$$
+        $$\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Círculo unitario: ángulos notables</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Grados</th>
+              <th>Radianes</th>
+              <th>\(\cos\theta\)</th>
+              <th>\(\sin\theta\)</th>
+              <th>\(\tan\theta\)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0°</td>
+              <td>\(0\)</td>
+              <td>\(1\)</td>
+              <td>\(0\)</td>
+              <td>\(0\)</td>
+            </tr>
+            <tr>
+              <td>30°</td>
+              <td>\(\pi/6\)</td>
+              <td>\(\sqrt3/2\)</td>
+              <td>\(1/2\)</td>
+              <td>\(\sqrt3/3\)</td>
+            </tr>
+            <tr>
+              <td>45°</td>
+              <td>\(\pi/4\)</td>
+              <td>\(\sqrt2/2\)</td>
+              <td>\(\sqrt2/2\)</td>
+              <td>\(1\)</td>
+            </tr>
+            <tr>
+              <td>60°</td>
+              <td>\(\pi/3\)</td>
+              <td>\(1/2\)</td>
+              <td>\(\sqrt3/2\)</td>
+              <td>\(\sqrt3\)</td>
+            </tr>
+            <tr>
+              <td>90°</td>
+              <td>\(\pi/2\)</td>
+              <td>\(0\)</td>
+              <td>\(1\)</td>
+              <td>No definida</td>
+            </tr>
+            <tr>
+              <td>120°</td>
+              <td>\(2\pi/3\)</td>
+              <td>\(-1/2\)</td>
+              <td>\(\sqrt3/2\)</td>
+              <td>\(-\sqrt3\)</td>
+            </tr>
+            <tr>
+              <td>135°</td>
+              <td>\(3\pi/4\)</td>
+              <td>\(-\sqrt2/2\)</td>
+              <td>\(\sqrt2/2\)</td>
+              <td>\(-1\)</td>
+            </tr>
+            <tr>
+              <td>150°</td>
+              <td>\(5\pi/6\)</td>
+              <td>\(-\sqrt3/2\)</td>
+              <td>\(1/2\)</td>
+              <td>\(-\sqrt3/3\)</td>
+            </tr>
+            <tr>
+              <td>180°</td>
+              <td>\(\pi\)</td>
+              <td>\(-1\)</td>
+              <td>\(0\)</td>
+              <td>\(0\)</td>
+            </tr>
+            <tr>
+              <td>210°</td>
+              <td>\(7\pi/6\)</td>
+              <td>\(-\sqrt3/2\)</td>
+              <td>\(-1/2\)</td>
+              <td>\(\sqrt3/3\)</td>
+            </tr>
+            <tr>
+              <td>225°</td>
+              <td>\(5\pi/4\)</td>
+              <td>\(-\sqrt2/2\)</td>
+              <td>\(-\sqrt2/2\)</td>
+              <td>\(1\)</td>
+            </tr>
+            <tr>
+              <td>240°</td>
+              <td>\(4\pi/3\)</td>
+              <td>\(-1/2\)</td>
+              <td>\(-\sqrt3/2\)</td>
+              <td>\(\sqrt3\)</td>
+            </tr>
+            <tr>
+              <td>270°</td>
+              <td>\(3\pi/2\)</td>
+              <td>\(0\)</td>
+              <td>\(-1\)</td>
+              <td>No definida</td>
+            </tr>
+            <tr>
+              <td>300°</td>
+              <td>\(5\pi/3\)</td>
+              <td>\(1/2\)</td>
+              <td>\(-\sqrt3/2\)</td>
+              <td>\(-\sqrt3\)</td>
+            </tr>
+            <tr>
+              <td>315°</td>
+              <td>\(7\pi/4\)</td>
+              <td>\(\sqrt2/2\)</td>
+              <td>\(-\sqrt2/2\)</td>
+              <td>\(-1\)</td>
+            </tr>
+            <tr>
+              <td>330°</td>
+              <td>\(11\pi/6\)</td>
+              <td>\(\sqrt3/2\)</td>
+              <td>\(-1/2\)</td>
+              <td>\(-\sqrt3/3\)</td>
+            </tr>
+            <tr>
+              <td>360°</td>
+              <td>\(2\pi\)</td>
+              <td>\(1\)</td>
+              <td>\(0\)</td>
+              <td>\(0\)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="formula-note">
+          Signos por cuadrante: I todas positivas; II seno; III tangente; IV
+          coseno.
+        </p>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Triángulos notables</h3>
+        <h4>Triángulo 45°–45°–90°</h4>
+        $$\text{catetos}:1,1\qquad \text{hipotenusa}:\sqrt2$$
+        $$\sin45^\circ=\cos45^\circ=\frac{\sqrt2}{2},\qquad \tan45^\circ=1$$
+        <h4>Triángulo 30°–60°–90°</h4>
+        $$\text{opuesto a }30^\circ:1,\quad \text{opuesto a
+        }60^\circ:\sqrt3,\quad \text{hipotenusa}:2$$
+        $$\sin30^\circ=\frac12,\quad \cos30^\circ=\frac{\sqrt3}{2},\quad
+        \sin60^\circ=\frac{\sqrt3}{2},\quad \cos60^\circ=\frac12$$
+      </section>
+    </div>
+  </article>
+
+  <article class="formula-panel" id="formula-derivadas" role="tabpanel">
+    <header class="formula-panel-header">
+      <div>
+        <h2>Cálculo 1 · Límites y derivadas</h2>
+        <p>Propiedades, límites notables y reglas de derivación.</p>
+      </div>
+      <button
+        class="btn-print"
+        type="button"
+        data-print-section="formula-derivadas"
+      >
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card">
+        <h3>Propiedades de límites</h3>
+        $$\lim_{x\to a}[f(x)\pm g(x)]=L\pm M$$ $$\lim_{x\to a}[c\,f(x)]=cL$$
+        $$\lim_{x\to a}[f(x)g(x)]=LM$$ $$\lim_{x\to
+        a}\frac{f(x)}{g(x)}=\frac{L}{M},\qquad M\ne0$$ $$\lim_{x\to
+        a}[f(x)]^n=L^n$$ $$\lim_{x\to a}\sqrt[n]{f(x)}=\sqrt[n]{L}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Límites notables</h3>
+        $$\lim_{x\to0}\frac{\sin x}{x}=1$$ $$\lim_{x\to0}\frac{\tan x}{x}=1$$
+        $$\lim_{x\to0}\frac{1-\cos x}{x^2}=\frac12$$
+        $$\lim_{x\to0}\frac{e^x-1}{x}=1$$ $$\lim_{x\to0}\frac{\ln(1+x)}{x}=1$$
+        $$\lim_{x\to\infty}\left(1+\frac1x\right)^x=e$$
+        $$\lim_{x\to0}(1+x)^{1/x}=e$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Definición de derivada</h3>
+        $$f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}$$ $$f'(a)=\lim_{x\to
+        a}\frac{f(x)-f(a)}{x-a}$$ $$m_{\text{tangente}}=f'(a)$$
+        $$y-f(a)=f'(a)(x-a)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Reglas algebraicas</h3>
+        $$\frac{d}{dx}(C)=0,\qquad \frac{d}{dx}(x)=1$$ $$\frac{d}{dx}(u^n)=n
+        u^{n-1}u'$$ $$\frac{d}{dx}(u\pm v)=u'\pm v'$$
+        $$\frac{d}{dx}(uv)=u'v+uv'$$ $$\frac{d}{dx}\left(\frac
+        uv\right)=\frac{u'v-uv'}{v^2}$$ $$\frac{d}{dx}f(g(x))=f'(g(x))g'(x)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Exponenciales y logaritmos</h3>
+        $$\frac{d}{dx}(e^u)=e^u u'$$ $$\frac{d}{dx}(a^u)=a^u\ln(a)u'$$
+        $$\frac{d}{dx}(\ln|u|)=\frac{u'}u$$ $$\frac{d}{dx}(\log_a
+        u)=\frac{u'}{u\ln a}$$ $$\frac{d}{dx}(u^v)=u^v\left(v'\ln
+        u+v\frac{u'}u\right)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Funciones trigonométricas</h3>
+        $$\frac{d}{dx}(\sin u)=\cos u\,u'$$ $$\frac{d}{dx}(\cos u)=-\sin u\,u'$$
+        $$\frac{d}{dx}(\tan u)=\sec^2u\,u'$$ $$\frac{d}{dx}(\cot
+        u)=-\csc^2u\,u'$$ $$\frac{d}{dx}(\sec u)=\sec u\tan u\,u'$$
+        $$\frac{d}{dx}(\csc u)=-\csc u\cot u\,u'$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Trigonométricas inversas</h3>
+        $$\frac{d}{dx}(\arcsin u)=\frac{u'}{\sqrt{1-u^2}}$$
+        $$\frac{d}{dx}(\arccos u)=-\frac{u'}{\sqrt{1-u^2}}$$
+        $$\frac{d}{dx}(\arctan u)=\frac{u'}{1+u^2}$$
+        $$\frac{d}{dx}(\operatorname{arccot}u)=-\frac{u'}{1+u^2}$$
+        $$\frac{d}{dx}(\operatorname{arcsec}u)=\frac{u'}{|u|\sqrt{u^2-1}}$$
+        $$\frac{d}{dx}(\operatorname{arccsc}u)=-\frac{u'}{|u|\sqrt{u^2-1}}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Funciones hiperbólicas</h3>
+        $$\frac{d}{dx}(\sinh u)=\cosh u\,u'$$ $$\frac{d}{dx}(\cosh u)=\sinh
+        u\,u'$$ $$\frac{d}{dx}(\tanh u)=\operatorname{sech}^2u\,u'$$
+        $$\frac{d}{dx}(\coth u)=-\operatorname{csch}^2u\,u'$$
+        $$\frac{d}{dx}(\operatorname{sech}u)=-\operatorname{sech}u\tanh u\,u'$$
+        $$\frac{d}{dx}(\operatorname{csch}u)=-\operatorname{csch}u\coth u\,u'$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Derivación implícita, paramétrica y aproximación lineal</h3>
+        $$F(x,y)=0\qquad\Longrightarrow\qquad \frac{dy}{dx}=-\frac{F_x}{F_y}$$
+        $$x=x(t),\ y=y(t)\qquad\Longrightarrow\qquad
+        \frac{dy}{dx}=\frac{dy/dt}{dx/dt}$$
+        $$\frac{d^2y}{dx^2}=\frac{d}{dt}\left(\frac{dy}{dx}\right)\Big/\frac{dx}{dt}$$
+        $$L(x)=f(a)+f'(a)(x-a)$$ $$dy=f'(x)\,dx$$
+      </section>
+    </div>
+  </article>
+
+  <article class="formula-panel" id="formula-integrales" role="tabpanel">
+    <header class="formula-panel-header">
+      <div>
+        <h2>Cálculo 2 · Integrales</h2>
+        <p>Integrales inmediatas, métodos y aplicaciones fundamentales.</p>
+      </div>
+      <button
+        class="btn-print"
+        type="button"
+        data-print-section="formula-integrales"
+      >
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card">
+        <h3>Propiedades básicas</h3>
+        $$\int [f(x)\pm g(x)]\,dx=\int f(x)\,dx\pm\int g(x)\,dx$$ $$\int c
+        f(x)\,dx=c\int f(x)\,dx$$ $$\int u^n\,du=\frac{u^{n+1}}{n+1}+C,\qquad
+        n\ne-1$$ $$\int\frac{du}{u}=\ln|u|+C$$ $$\int e^u\,du=e^u+C$$ $$\int
+        a^u\,du=\frac{a^u}{\ln a}+C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Integrales trigonométricas inmediatas</h3>
+        $$\int\sin u\,du=-\cos u+C$$ $$\int\cos u\,du=\sin u+C$$
+        $$\int\sec^2u\,du=\tan u+C$$ $$\int\csc^2u\,du=-\cot u+C$$ $$\int\sec
+        u\tan u\,du=\sec u+C$$ $$\int\csc u\cot u\,du=-\csc u+C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Logarítmicas trigonométricas</h3>
+        $$\int\tan u\,du=\ln|\sec u|+C$$ $$\int\cot u\,du=\ln|\sin u|+C$$
+        $$\int\sec u\,du=\ln|\sec u+\tan u|+C$$ $$\int\csc u\,du=-\ln|\csc
+        u+\cot u|+C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Formas inversas</h3>
+        $$\int\frac{du}{a^2+u^2}=\frac1a\arctan\left(\frac ua\right)+C$$
+        $$\int\frac{du}{\sqrt{a^2-u^2}}=\arcsin\left(\frac ua\right)+C$$
+        $$\int\frac{du}{u\sqrt{u^2-a^2}}=\frac1a\operatorname{arcsec}\left(\frac{|u|}{a}\right)+C$$
+        $$\int\frac{du}{u^2-a^2}=\frac{1}{2a}\ln\left|\frac{u-a}{u+a}\right|+C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Integración por sustitución</h3>
+        $$u=g(x),\qquad du=g'(x)\,dx$$ $$\int f(g(x))g'(x)\,dx=\int f(u)\,du$$
+        <p class="formula-note">
+          Busca una función interna y una expresión proporcional a su derivada.
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Integración por partes</h3>
+        $$\int u\,dv=uv-\int v\,du$$
+        <p>
+          Una guía frecuente para elegir \(u\): logarítmica, inversa
+          trigonométrica, algebraica, trigonométrica y exponencial.
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Sustitución trigonométrica</h3>
+        $$\sqrt{a^2-x^2}:\quad x=a\sin\theta$$ $$\sqrt{a^2+x^2}:\quad
+        x=a\tan\theta$$ $$\sqrt{x^2-a^2}:\quad x=a\sec\theta$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Fracciones parciales</h3>
+        $$\frac{P(x)}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}$$
+        $$\frac{P(x)}{(x-a)^n}=\frac{A_1}{x-a}+\frac{A_2}{(x-a)^2}+\cdots+\frac{A_n}{(x-a)^n}$$
+        $$\frac{P(x)}{x^2+bx+c}=\frac{Ax+B}{x^2+bx+c}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Integrales con radicales</h3>
+        $$\int\sqrt{a^2-u^2}\,du=\frac{u}{2}\sqrt{a^2-u^2}+\frac{a^2}{2}\arcsin\left(\frac
+        ua\right)+C$$
+        $$\int\sqrt{u^2+a^2}\,du=\frac{u}{2}\sqrt{u^2+a^2}+\frac{a^2}{2}\ln\left|u+\sqrt{u^2+a^2}\right|+C$$
+        $$\int\sqrt{u^2-a^2}\,du=\frac{u}{2}\sqrt{u^2-a^2}-\frac{a^2}{2}\ln\left|u+\sqrt{u^2-a^2}\right|+C$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Integral definida y teorema fundamental</h3>
+        $$\int_a^b f(x)\,dx=F(b)-F(a),\qquad F'(x)=f(x)$$
+        $$\frac{d}{dx}\left(\int_a^x f(t)\,dt\right)=f(x)$$
+        $$\frac{d}{dx}\left(\int_{g(x)}^{h(x)}f(t)\,dt\right)=f(h(x))h'(x)-f(g(x))g'(x)$$
+        $$A=\int_a^b |f(x)-g(x)|\,dx$$
+        $$V_{\text{discos}}=\pi\int_a^b\left[R(x)^2-r(x)^2\right]dx$$
+        $$V_{\text{capas}}=2\pi\int_a^b(\text{radio})(\text{altura})\,dx$$
+      </section>
+    </div>
+  </article>
+
+  <article class="formula-panel" id="formula-edos" role="tabpanel">
+    <header class="formula-panel-header">
+      <div>
+        <h2>Cálculo 3 · Ecuaciones diferenciales</h2>
+        <p>
+          Modelos de primer orden, orden superior, sistemas y transformada de
+          Laplace.
+        </p>
+      </div>
+      <button class="btn-print" type="button" data-print-section="formula-edos">
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card">
+        <h3>Variables separables</h3>
+        $$\frac{dy}{dx}=g(x)h(y)$$ $$\frac{dy}{h(y)}=g(x)\,dx$$
+        $$\int\frac{dy}{h(y)}=\int g(x)\,dx+C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ecuación lineal de primer orden</h3>
+        $$y'+P(x)y=Q(x)$$ $$\mu(x)=e^{\int P(x)\,dx}$$
+        $$y=\frac{1}{\mu(x)}\left[\int \mu(x)Q(x)\,dx+C\right]$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ecuación de Bernoulli</h3>
+        $$y'+P(x)y=Q(x)y^n$$ $$v=y^{1-n}$$ $$v'+(1-n)P(x)v=(1-n)Q(x)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ecuaciones exactas</h3>
+        $$M(x,y)\,dx+N(x,y)\,dy=0$$ $$\frac{\partial M}{\partial
+        y}=\frac{\partial N}{\partial x}$$ $$\psi_x=M,\qquad \psi_y=N,\qquad
+        \psi(x,y)=C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Homogéneas de primer orden</h3>
+        $$\frac{dy}{dx}=F\left(\frac yx\right)$$ $$v=\frac yx,\qquad y=vx,\qquad
+        y'=v+xv'$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Crecimiento, decaimiento y logística</h3>
+        $$\frac{dP}{dt}=kP\qquad\Longrightarrow\qquad P(t)=P_0e^{kt}$$
+        $$\frac{dP}{dt}=rP\left(1-\frac PK\right)$$
+        $$P(t)=\frac{K}{1+Ae^{-rt}},\qquad A=\frac{K-P_0}{P_0}$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Ecuaciones lineales homogéneas de orden superior</h3>
+        $$a_ny^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_1y'+a_0y=0$$
+        $$a_nr^n+a_{n-1}r^{n-1}+\cdots+a_1r+a_0=0$$
+        <h4>Raíces reales distintas</h4>
+        $$y=C_1e^{r_1x}+C_2e^{r_2x}+\cdots+C_ne^{r_nx}$$
+        <h4>Raíz real repetida \(r\) de multiplicidad \(m\)</h4>
+        $$y=e^{rx}\left(C_1+C_2x+\cdots+C_mx^{m-1}\right)$$
+        <h4>Raíces complejas \(r=\alpha\pm\beta i\)</h4>
+        $$y=e^{\alpha x}\left(C_1\cos\beta x+C_2\sin\beta x\right)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>No homogéneas</h3>
+        $$a y''+b y'+cy=g(x)$$ $$y=y_h+y_p$$
+        <p class="formula-note">
+          Para coeficientes indeterminados, la forma de \(y_p\) se elige según
+          \(g(x)\). Si se repite con \(y_h\), se multiplica por una potencia
+          adecuada de \(x\).
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Variación de parámetros</h3>
+        $$y_p=-y_1\int\frac{y_2g}{W}\,dx+y_2\int\frac{y_1g}{W}\,dx$$
+        $$W=y_1y_2'-y_1'y_2$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Sistemas lineales</h3>
+        $$\mathbf{x}'=A\mathbf{x}$$ $$\mathbf{x}(t)=e^{At}\mathbf{x}(0)$$
+        $$\det(A-\lambda I)=0$$ $$\mathbf{x}(t)=\sum_i C_i\mathbf{v}_i
+        e^{\lambda_i t}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Transformada de Laplace</h3>
+        $$\mathcal{L}\{f(t)\}=\int_0^\infty e^{-st}f(t)\,dt$$
+        $$\mathcal{L}\{f'\}=sF(s)-f(0)$$
+        $$\mathcal{L}\{f''\}=s^2F(s)-sf(0)-f'(0)$$
+        $$\mathcal{L}\{e^{at}f(t)\}=F(s-a)$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Transformadas frecuentes</h3>
+        $$\mathcal{L}\{1\}=\frac1s,\qquad
+        \mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}$$
+        $$\mathcal{L}\{e^{at}\}=\frac{1}{s-a}$$ $$\mathcal{L}\{\sin
+        bt\}=\frac{b}{s^2+b^2},\qquad \mathcal{L}\{\cos bt\}=\frac{s}{s^2+b^2}$$
+        $$\mathcal{L}\{\sinh bt\}=\frac{b}{s^2-b^2},\qquad \mathcal{L}\{\cosh
+        bt\}=\frac{s}{s^2-b^2}$$ $$\mathcal{L}\{f*g\}=F(s)G(s)$$
+      </section>
+    </div>
+  </article>
+
+  <article class="formula-panel" id="formula-fourier" role="tabpanel">
+    <header class="formula-panel-header">
+      <div>
+        <h2>Cálculo 4 · Fourier y expansión de Taylor</h2>
+        <p>
+          Series de potencias, aproximación local y representación frecuencial.
+        </p>
+      </div>
+      <button
+        class="btn-print"
+        type="button"
+        data-print-section="formula-fourier"
+      >
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card wide">
+        <h3>Polinomio y serie de Taylor</h3>
+        $$P_n(x)=\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^k$$
+        $$f(x)=\sum_{k=0}^{\infty}\frac{f^{(k)}(a)}{k!}(x-a)^k$$
+        $$R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}$$
+        <p class="formula-note">
+          Cuando \(a=0\), la expansión se denomina serie de Maclaurin.
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Series de Maclaurin comunes</h3>
+        $$e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}$$ $$\sin
+        x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}$$ $$\cos
+        x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}$$
+        $$\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n,\qquad |x|<1$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Más expansiones frecuentes</h3>
+        $$\ln(1+x)=\sum_{n=1}^{\infty}(-1)^{n+1}\frac{x^n}{n},\qquad -1 x\le1$$
+        $$\arctan x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{2n+1},\qquad
+        |x|\le1$$ $$(1+x)^\alpha=\sum_{n=0}^{\infty}{\alpha\choose n}x^n$$
+        $${\alpha\choose n}=\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Serie de Fourier con periodo \(T\)</h3>
+        $$f(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left[a_n\cos(n\omega_0t)+b_n\sin(n\omega_0t)\right]$$
+        $$\omega_0=\frac{2\pi}{T}$$
+        $$a_0=\frac{2}{T}\int_{t_0}^{t_0+T}f(t)\,dt$$
+        $$a_n=\frac{2}{T}\int_{t_0}^{t_0+T}f(t)\cos(n\omega_0t)\,dt$$
+        $$b_n=\frac{2}{T}\int_{t_0}^{t_0+T}f(t)\sin(n\omega_0t)\,dt$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Forma en intervalo \([-L,L]\)</h3>
+        $$f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left[a_n\cos\left(\frac{n\pi
+        x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right]$$
+        $$a_n=\frac1L\int_{-L}^{L}f(x)\cos\left(\frac{n\pi x}{L}\right)dx$$
+        $$b_n=\frac1L\int_{-L}^{L}f(x)\sin\left(\frac{n\pi x}{L}\right)dx$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Simetrías</h3>
+        $$f(-x)=f(x)\quad\Longrightarrow\quad b_n=0$$ $$a_n=\frac{2}{L}\int_0^L
+        f(x)\cos\left(\frac{n\pi x}{L}\right)dx$$
+        $$f(-x)=-f(x)\quad\Longrightarrow\quad a_0=a_n=0$$
+        $$b_n=\frac{2}{L}\int_0^L f(x)\sin\left(\frac{n\pi x}{L}\right)dx$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Forma compleja de Fourier</h3>
+        $$f(t)=\sum_{n=-\infty}^{\infty}c_ne^{in\omega_0t}$$
+        $$c_n=\frac1T\int_{t_0}^{t_0+T}f(t)e^{-in\omega_0t}\,dt$$
+        $$c_0=\frac{a_0}{2},\qquad c_n=\frac{a_n-ib_n}{2}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Transformada de Fourier</h3>
+        $$F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt$$
+        $$f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{i\omega
+        t}\,d\omega$$ $$\mathcal{F}\{f'(t)\}=i\omega F(\omega)$$
+        $$\mathcal{F}\{f*g\}=F(\omega)G(\omega)$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Identidad de Parseval</h3>
+        $$\frac1T\int_{t_0}^{t_0+T}|f(t)|^2dt=\frac{a_0^2}{4}+\frac12\sum_{n=1}^{\infty}(a_n^2+b_n^2)$$
+        $$\int_{-\infty}^{\infty}|f(t)|^2dt=\frac{1}{2\pi}\int_{-\infty}^{\infty}|F(\omega)|^2d\omega$$
+      </section>
+    </div>
+  </article>
+
+  <article class="formula-panel" id="formula-fisica" role="tabpanel">
+    <header class="formula-panel-header">
+      <div>
+        <h2>Física · Compendio principal</h2>
+        <p>
+          Mecánica, fluidos, termodinámica, electricidad, magnetismo, ondas y
+          óptica.
+        </p>
+      </div>
+      <button
+        class="btn-print"
+        type="button"
+        data-print-section="formula-fisica"
+      >
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card">
+        <h3>Vectores</h3>
+        $$\vec A=A_x\hat i+A_y\hat j+A_z\hat k$$ $$|\vec
+        A|=\sqrt{A_x^2+A_y^2+A_z^2}$$ $$\hat u_A=\frac{\vec A}{|\vec A|}$$
+        $$\vec A\cdot\vec B=AB\cos\theta$$ $$|\vec A\times\vec B|=AB\sin\theta$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Cinemática rectilínea</h3>
+        $$v_{\text{med}}=\frac{\Delta x}{\Delta t},\qquad
+        a_{\text{med}}=\frac{\Delta v}{\Delta t}$$ $$v=\frac{dx}{dt},\qquad
+        a=\frac{dv}{dt}=\frac{d^2x}{dt^2}$$ $$x=x_0+vt\qquad(\text{MRU})$$
+        $$v=v_0+at$$ $$x=x_0+v_0t+\frac12at^2$$ $$v^2=v_0^2+2a(x-x_0)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Movimiento parabólico</h3>
+        $$v_{0x}=v_0\cos\theta,\qquad v_{0y}=v_0\sin\theta$$
+        $$x=x_0+v_0\cos\theta\,t$$ $$y=y_0+v_0\sin\theta\,t-\frac12gt^2$$
+        $$v_y=v_0\sin\theta-gt$$ $$T=\frac{2v_0\sin\theta}{g}$$
+        $$R=\frac{v_0^2\sin(2\theta)}{g}$$
+        $$h_{\max}=\frac{v_0^2\sin^2\theta}{2g}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Movimiento circular</h3>
+        $$\omega=\frac{d\theta}{dt},\qquad \alpha=\frac{d\omega}{dt}$$
+        $$\omega=\omega_0+\alpha t$$ $$\theta=\theta_0+\omega_0t+\frac12\alpha
+        t^2$$ $$v=\omega r,\qquad a_t=\alpha r$$ $$a_c=\frac{v^2}{r}=\omega^2r$$
+        $$\omega=2\pi f,\qquad T=\frac1f$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Dinámica</h3>
+        $$\sum\vec F=m\vec a$$ $$\vec W=m\vec g$$ $$F_s\le\mu_sN,\qquad
+        F_k=\mu_kN$$ $$F_c=\frac{mv^2}{r}$$ $$\vec F_{AB}=-\vec F_{BA}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Trabajo, energía y potencia</h3>
+        $$W=\int\vec F\cdot d\vec r$$ $$W=Fd\cos\theta$$ $$K=\frac12mv^2$$
+        $$U_g=mgh,\qquad U_e=\frac12kx^2$$ $$W_{\text{neto}}=\Delta K$$
+        $$E_i+W_{nc}=E_f$$ $$P=\frac{dW}{dt}=\vec F\cdot\vec v$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Cantidad de movimiento e impulso</h3>
+        $$\vec p=m\vec v$$ $$\vec J=\int\vec F\,dt=\Delta\vec p$$ $$\sum\vec
+        p_i=\sum\vec p_f$$ $$e=\frac{v_{2f}-v_{1f}}{v_{1i}-v_{2i}}$$ $$\vec
+        r_{cm}=\frac{\sum m_i\vec r_i}{\sum m_i}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Rotación y equilibrio</h3>
+        $$\vec\tau=\vec r\times\vec F$$ $$\sum\tau=I\alpha$$
+        $$K_{rot}=\frac12I\omega^2$$ $$\vec L=I\vec\omega$$ $$\sum\vec
+        F=0,\qquad \sum\tau=0$$ $$I=\int r^2\,dm$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Gravitación</h3>
+        $$F=G\frac{m_1m_2}{r^2}$$ $$g=G\frac{M}{r^2}$$ $$U=-G\frac{Mm}{r}$$
+        $$v_{orb}=\sqrt{\frac{GM}{r}}$$ $$v_{esc}=\sqrt{\frac{2GM}{R}}$$
+        $$T^2=\frac{4\pi^2}{GM}r^3$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Fluidos</h3>
+        $$\rho=\frac{m}{V},\qquad P=\frac{F}{A}$$ $$P=P_0+\rho gh$$
+        $$F_B=\rho_{fluido}gV_{desplazado}$$ $$A_1v_1=A_2v_2$$ $$P+\frac12\rho
+        v^2+\rho gh=\text{constante}$$ $$Q=Av$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Termodinámica</h3>
+        $$Q=mc\Delta T$$ $$Q=mL$$ $$PV=nRT$$ $$\Delta U=Q-W$$
+        $$W=\int_{V_i}^{V_f}P\,dV$$ $$\eta=\frac{W}{Q_H}=1-\frac{Q_C}{Q_H}$$
+        $$\eta_{Carnot}=1-\frac{T_C}{T_H}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Electrostática</h3>
+        $$F=k\frac{|q_1q_2|}{r^2}$$ $$\vec E=\frac{\vec
+        F}{q_0}=k\frac{q}{r^2}\hat r$$ $$V=k\frac qr$$
+        $$U=qV=k\frac{q_1q_2}{r}$$ $$\Phi_E=\int\vec E\cdot d\vec A$$
+        $$\oint\vec E\cdot d\vec A=\frac{Q_{enc}}{\varepsilon_0}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Capacitancia y circuitos</h3>
+        $$C=\frac QV$$ $$C_{placas}=\varepsilon\frac Ad$$
+        $$U_C=\frac12CV^2=\frac{Q^2}{2C}$$ $$V=IR$$ $$P=VI=I^2R=\frac{V^2}{R}$$
+        $$R=\rho\frac LA$$ $$\sum I_{entra}=\sum I_{sale},\qquad \sum\Delta
+        V=0$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Resistencias y capacitores equivalentes</h3>
+        $$R_s=R_1+R_2+\cdots$$ $$\frac1{R_p}=\frac1{R_1}+\frac1{R_2}+\cdots$$
+        $$C_p=C_1+C_2+\cdots$$ $$\frac1{C_s}=\frac1{C_1}+\frac1{C_2}+\cdots$$
+        $$q_{carga}=CV\left(1-e^{-t/RC}\right)$$ $$q_{descarga}=Q_0e^{-t/RC}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Magnetismo e inducción</h3>
+        $$\vec F=q\vec v\times\vec B$$ $$\vec F=I\vec L\times\vec B$$
+        $$r=\frac{mv}{|q|B}$$ $$B_{hilo}=\frac{\mu_0I}{2\pi r}$$
+        $$\Phi_B=\int\vec B\cdot d\vec A$$ $$\mathcal{E}=-\frac{d\Phi_B}{dt}$$
+        $$\mathcal{E}_L=-L\frac{dI}{dt},\qquad U_L=\frac12LI^2$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ondas y sonido</h3>
+        $$v=\lambda f$$ $$y(x,t)=A\sin(kx-\omega t+\phi)$$
+        $$k=\frac{2\pi}{\lambda},\qquad \omega=2\pi f$$
+        $$v_{cuerda}=\sqrt{\frac{T}{\mu}}$$ $$I=\frac PA,\qquad
+        \beta=10\log_{10}\left(\frac I{I_0}\right)$$ $$f'=f\frac{v\pm v_o}{v\mp
+        v_s}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Óptica geométrica</h3>
+        $$n=\frac cv$$ $$n_1\sin\theta_1=n_2\sin\theta_2$$ $$\theta_i=\theta_r$$
+        $$\frac1f=\frac1{d_o}+\frac1{d_i}$$
+        $$m=\frac{h_i}{h_o}=-\frac{d_i}{d_o}$$ $$P_{lente}=\frac1f\quad(f\text{
+        en metros})$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Relatividad y física moderna</h3>
+        $$E=mc^2$$ $$\gamma=\frac1{\sqrt{1-v^2/c^2}}$$ $$\Delta t=\gamma\Delta
+        t_0,\qquad L=\frac{L_0}{\gamma}$$ $$E=hf=\frac{hc}{\lambda}$$
+        $$\lambda_{de\ Broglie}=\frac hp$$ $$E_n=-\frac{13.6\
+        \text{eV}}{n^2}\qquad(\text{átomo de hidrógeno})$$
+      </section>
+    </div>
+  </article>
+</section>

@@ -161,7 +161,20 @@
       <nav class="main-menu" id="main-menu" aria-label="Navegación principal">
         <a href="#inicio" data-route="inicio">INICIO</a>
         <a href="#precios" data-route="precios">PRECIOS</a>
-        <a href="#formularios" data-route="formularios">FORMULARIOS</a>
+        <div class="menu-item menu-item--submenu">
+          <a href="#formularios" data-route="formularios">FORMULARIOS</a>
+          <button
+            class="submenu-trigger"
+            id="submenu-trigger"
+            type="button"
+            aria-label="Mostrar temas de formularios"
+            aria-expanded="false"
+            aria-controls="formula-submenu"
+          >
+            <span class="submenu-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="submenu" id="formula-submenu" aria-label="Temas disponibles"></div>
+        </div>
         <a href="#contactos" data-route="contactos">CONTACTOS</a>
       </nav>
 

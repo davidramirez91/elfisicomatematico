@@ -1,5 +1,78 @@
 "use strict";
 
+// Aquí se registran TODOS los formularios. Añadir un tema solo requiere:
+// 1) Crear templates/formulario_nuevo_tema.html (ver README.md).
+// 2) Añadir un objeto a FORMULA_TOPICS. La biblioteca y el menú se generan solos.
+const FORMULA_TOPICS = Object.freeze([
+  {
+    route: "formulario_identidades",
+    file: "./templates/formulario_identidades.html",
+    label: "Identidades",
+    title: "Identidades trigonométricas",
+    description: "Relaciones trigonométricas, círculo unitario y triángulos notables.",
+    icon: "θ",
+    group: "Matemáticas",
+  },
+  {
+    route: "formulario_logaritmos",
+    file: "./templates/formulario_logaritmos.html",
+    label: "Potencias y logaritmos",
+    title: "Potencias y logaritmos",
+    description: "Propiedades de exponentes, radicales y leyes de los logaritmos.",
+    icon: "log",
+    group: "Matemáticas",
+  },
+  {
+    route: "formulario_derivadas",
+    file: "./templates/formulario_derivadas.html",
+    label: "Límites y derivadas",
+    title: "Cálculo 1 · Límites y derivadas",
+    description: "Límites notables, reglas de derivación y funciones elementales.",
+    icon: "d/dx",
+    group: "Cálculo",
+  },
+  {
+    route: "formulario_integrales",
+    file: "./templates/formulario_integrales.html",
+    label: "Integrales",
+    title: "Cálculo 2 · Integrales",
+    description: "Integrales inmediatas, sustitución, partes y aplicaciones.",
+    icon: "∫",
+    group: "Cálculo",
+  },
+  {
+    route: "formulario_edos",
+    file: "./templates/formulario_edos.html",
+    label: "Ecuaciones diferenciales",
+    title: "Cálculo 3 · Ecuaciones diferenciales",
+    description: "EDO de primer orden, orden superior y transformada de Laplace.",
+    icon: "y′",
+    group: "Cálculo",
+  },
+  {
+    route: "formulario_fourier_taylor",
+    file: "./templates/formulario_fourier_taylor.html",
+    label: "Fourier y Taylor",
+    title: "Cálculo 4 · Fourier y Taylor",
+    description: "Series de Taylor, Fourier y transformadas frecuentes.",
+    icon: "Σ",
+    group: "Cálculo",
+  },
+  {
+    route: "formulario_fisica",
+    file: "./templates/formulario_fisica.html",
+    label: "Física",
+    title: "Física · Compendio principal",
+    description: "Mecánica, fluidos, termodinámica, electricidad, ondas y óptica.",
+    icon: "F",
+    group: "Física",
+  },
+]);
+
+const FORMULA_BY_ROUTE = Object.freeze(
+  Object.fromEntries(FORMULA_TOPICS.map((topic) => [topic.route, topic])),
+);
+
 const ROUTES = Object.freeze({
   inicio: {
     file: "./templates/inicio.html",
@@ -10,19 +83,26 @@ const ROUTES = Object.freeze({
     title: "Cursos, horarios y precios | EL FÍSICO MATEMÁTICO",
   },
   formularios: {
-    file: "./templates/formularios.html",
-    title: "Formularios de ciencias | EL FÍSICO MATEMÁTICO",
+    file: null, // La biblioteca se construye automáticamente, sin formularios.html.
+    title: "Biblioteca de formularios | EL FÍSICO MATEMÁTICO",
   },
   contactos: {
     file: "./templates/contactos.html",
     title: "Contactos | EL FÍSICO MATEMÁTICO",
   },
+  ...Object.fromEntries(
+    FORMULA_TOPICS.map((topic) => [topic.route, {
+      file: topic.file,
+      title: `${topic.title} | EL FÍSICO MATEMÁTICO`,
+    }]),
+  ),
 });
 
-// Mantiene compatibles enlaces antiguos que pudieran estar compartidos.
+// Enlaces anteriores siguen dirigiendo a la biblioteca general.
 const ROUTE_ALIASES = Object.freeze({
   empresa: "precios",
   formulario: "formularios",
+  formulario_fourier: "formulario_fourier_taylor",
 });
 
 const MOBILE_BREAKPOINT = 790;
@@ -35,26 +115,20 @@ const themeToggle = document.querySelector("#theme-toggle");
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const submenuItem = document.querySelector(".menu-item--submenu");
 const submenuTrigger = document.querySelector("#submenu-trigger");
+const submenu = document.querySelector("#formula-submenu");
+let latestRouteLoad = 0;
 
 function normalizeRoute(routeName) {
   const normalized = String(routeName || "")
     .replace(/^#/, "")
     .trim()
     .toLowerCase();
-
   return ROUTE_ALIASES[normalized] || normalized;
 }
 
 function getRouteFromHash() {
   const routeName = normalizeRoute(window.location.hash);
-  return ROUTES[routeName] ? routeName : "inicio";
-}
-
-function isCompactNavigation() {
-  return (
-    window.innerWidth <= MOBILE_BREAKPOINT ||
-    window.matchMedia("(hover: none)").matches
-  );
+  return Object.hasOwn(ROUTES, routeName) ? routeName : "inicio";
 }
 
 function closeSubmenu() {
@@ -64,7 +138,6 @@ function closeSubmenu() {
 
 function toggleSubmenu() {
   if (!submenuItem || !submenuTrigger) return;
-
   const isOpen = submenuItem.classList.toggle("submenu-open");
   submenuTrigger.setAttribute("aria-expanded", String(isOpen));
 }
@@ -76,116 +149,126 @@ function closeMobileMenu() {
   closeSubmenu();
 }
 
-function updateActiveNavigation(routeName) {
-  document.querySelectorAll("[data-route]").forEach((link) => {
-    const isActive = link.dataset.route === routeName;
-
-    if (isActive) {
-      link.setAttribute("aria-current", "page");
-    } else {
-      link.removeAttribute("aria-current");
-    }
-  });
-
-  submenuItem?.classList.toggle(
-    "is-active",
-    routeName === "precios" || routeName === "formularios",
-  );
+function renderFormulaSubmenu() {
+  if (!submenu) return;
+  submenu.innerHTML = FORMULA_TOPICS.map((topic) =>
+    `<a href="#${topic.route}" data-route="${topic.route}">${escapeHtml(topic.label)}</a>`,
+  ).join("");
 }
 
-async function loadRoute(routeName) {
-  const canonicalRoute = normalizeRoute(routeName);
-  const route = ROUTES[canonicalRoute] || ROUTES.inicio;
+function updateActiveNavigation(routeName) {
+  const isFormulas = routeName === "formularios" || Boolean(FORMULA_BY_ROUTE[routeName]);
+  document.querySelectorAll("[data-route]").forEach((link) => {
+    const isActive = link.dataset.route === routeName ||
+      (link.dataset.route === "formularios" && isFormulas);
+    if (isActive) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+  submenuItem?.classList.toggle("is-active", isFormulas);
+}
 
-  if (!app) return;
+function renderFormulaCatalog() {
+  return `
+    <section class="page-section formula-page formula-catalog">
+      <header class="section-heading">
+        <span class="eyebrow">Biblioteca de consulta</span>
+        <h1>Formularios de Matemática, Cálculo y Física</h1>
+        <p>Selecciona un tema para consultar sus fórmulas y abrir su versión A4,
+           lista para imprimir o guardar como PDF.</p>
+      </header>
+      <div class="formula-catalog-meta" aria-label="Cantidad de formularios">
+        <span>${FORMULA_TOPICS.length} formularios disponibles</span>
+        <span>Contenido independiente por tema</span>
+      </div>
+      <div class="formula-catalog-grid">
+        ${FORMULA_TOPICS.map((topic) => `
+          <a class="formula-topic-card" href="#${topic.route}">
+            <span class="formula-topic-icon" aria-hidden="true">${escapeHtml(topic.icon)}</span>
+            <span class="formula-topic-copy">
+              <span class="formula-topic-category">${escapeHtml(topic.group)}</span>
+              <strong>${escapeHtml(topic.title)}</strong>
+              <span>${escapeHtml(topic.description)}</span>
+              <span class="formula-topic-action">Abrir formulario <span aria-hidden="true">→</span></span>
+            </span>
+          </a>
+        `).join("")}
+      </div>
+    </section>`;
+}
 
-  app.innerHTML = `
-    <div class="page-loader" role="status">
-      <span></span>
-      <p>Cargando contenido…</p>
-    </div>
-  `;
-
-  try {
-    const response = await fetch(route.file, { cache: "no-cache" });
-
-    if (!response.ok) {
-      throw new Error(`No fue posible cargar ${route.file}`);
-    }
-
-    app.innerHTML = await response.text();
-    document.title = route.title;
-
-    updateActiveNavigation(canonicalRoute);
-    initializeLoadedTemplate(canonicalRoute);
-    closeMobileMenu();
-
-    await typesetMath(app);
-
-    app.focus({ preventScroll: true });
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  } catch (error) {
-    console.error(error);
-    app.innerHTML = `
-      <section class="error-panel">
-        <h1>No se pudo cargar la sección</h1>
-        <p>
-          Comprueba que los archivos estén en las carpetas
-          <code>templates</code> y <code>static</code>. Para probar localmente,
-          utiliza Live Server u otro servidor HTTP.
-        </p>
-        <a class="btn btn-primary" href="#inicio">Volver al inicio</a>
-      </section>
+function initializeLoadedTemplate(routeName) {
+  const topic = FORMULA_BY_ROUTE[routeName];
+  if (!topic) return;
+  const section = app?.querySelector(".formula-panel");
+  if (section) {
+    // La impresión conserva el LaTeX original, no el SVG generado por MathJax.
+    section.__latexSource = section.innerHTML;
+  }
+  const topicIndex = FORMULA_TOPICS.indexOf(topic);
+  const previous = FORMULA_TOPICS[topicIndex - 1];
+  const next = FORMULA_TOPICS[topicIndex + 1];
+  const navigation = app?.querySelector("[data-topic-navigation]");
+  if (navigation) {
+    navigation.innerHTML = `
+      ${previous ? `<a href="#${previous.route}" aria-label="Formulario anterior: ${escapeHtml(previous.label)}">← ${escapeHtml(previous.label)}</a>` : "<span></span>"}
+      <a href="#formularios">Todos los formularios</a>
+      ${next ? `<a href="#${next.route}" aria-label="Formulario siguiente: ${escapeHtml(next.label)}">${escapeHtml(next.label)} →</a>` : "<span></span>"}
     `;
   }
 }
 
-function initializeLoadedTemplate(routeName) {
-  if (routeName === "formularios") {
-    initializeFormulaTabs();
+async function loadRoute(routeName) {
+  const loadId = ++latestRouteLoad;
+  const canonicalRoute = normalizeRoute(routeName);
+  const route = ROUTES[canonicalRoute] || ROUTES.inicio;
+  if (!app) return;
+
+  // Evita dejar referencias de MathJax a nodos que ya no están en el DOM.
+  window.MathJax?.typesetClear?.([app]);
+  if (canonicalRoute === "formularios") {
+    app.innerHTML = renderFormulaCatalog();
+    document.title = route.title;
+    updateActiveNavigation(canonicalRoute);
+    closeMobileMenu();
+    app.focus({ preventScroll: true });
+    window.scrollTo({ top: 0, behavior: "instant" });
+    return;
+  }
+
+  app.innerHTML = `
+    <div class="page-loader" role="status"><span></span><p>Cargando contenido…</p></div>`;
+  try {
+    const response = await fetch(route.file, { cache: "no-cache" });
+    if (!response.ok) throw new Error(`No fue posible cargar ${route.file}`);
+    const html = await response.text();
+    if (loadId !== latestRouteLoad) return;
+    app.innerHTML = html;
+    document.title = route.title;
+    updateActiveNavigation(canonicalRoute);
+    initializeLoadedTemplate(canonicalRoute);
+    closeMobileMenu();
+    await typesetMath(app);
+    if (loadId !== latestRouteLoad) return;
+    app.focus({ preventScroll: true });
+    window.scrollTo({ top: 0, behavior: "instant" });
+  } catch (error) {
+    if (loadId !== latestRouteLoad) return;
+    console.error(error);
+    app.innerHTML = `
+      <section class="error-panel">
+        <h1>No se pudo cargar la sección</h1>
+        <p>Comprueba que el archivo HTML exista en <code>templates/</code>.
+           Para probar el sitio localmente, utiliza Live Server o un servidor HTTP.</p>
+        <a class="btn btn-primary" href="#formularios">Ir a los formularios</a>
+      </section>`;
   }
 }
 
-function initializeFormulaTabs() {
-  const tabs = [...document.querySelectorAll(".formula-tab")];
-  const panels = [...document.querySelectorAll(".formula-panel")];
-  const emptyState = document.querySelector("#formula-empty");
-
-  // Guarda el LaTeX original para que la vista de impresión no copie el SVG de MathJax.
-  panels.forEach((panel) => {
-    panel.__latexSource = panel.innerHTML;
-  });
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", async () => {
-      const targetPanel = document.getElementById(tab.dataset.formulaTarget);
-      if (!targetPanel) return;
-
-      tabs.forEach((button) => {
-        const isActive = button === tab;
-        button.classList.toggle("is-active", isActive);
-        button.setAttribute("aria-selected", String(isActive));
-      });
-
-      panels.forEach((panel) => {
-        panel.classList.toggle("is-active", panel === targetPanel);
-      });
-
-      if (emptyState) {
-        emptyState.hidden = true;
-      }
-
-      await typesetMath(targetPanel);
-      targetPanel.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  });
-}
-
 async function typesetMath(container) {
-  if (!container || !window.MathJax?.typesetPromise) return;
-
+  if (!container || !window.MathJax) return;
   try {
-    await window.MathJax.typesetPromise([container]);
+    if (window.MathJax.startup?.promise) await window.MathJax.startup.promise;
+    if (window.MathJax.typesetPromise) await window.MathJax.typesetPromise([container]);
   } catch (error) {
     console.warn("MathJax no pudo procesar alguna fórmula.", error);
   }
@@ -205,7 +288,8 @@ function openPrintView(sectionId) {
   }
 
   const sourceHtml = section.__latexSource || section.innerHTML;
-  const logoUrl = new URL("./static/img/logo.png", window.location.href).href;
+  const logoUrl = new URL("./static/img/logo.png", document.baseURI).href;
+  const baseUrl = new URL("./", document.baseURI).href;
   const title =
     section.querySelector("h2")?.textContent?.trim() || "Formulario académico";
   const cleanContent = sourceHtml.replace(/<button[\s\S]*?<\/button>/gi, "");
@@ -217,6 +301,7 @@ function openPrintView(sectionId) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="${escapeHtml(baseUrl)}" />
   <title>${escapeHtml(title)} | EL FÍSICO MATEMÁTICO</title>
   <script>
     window.MathJax = {
@@ -295,8 +380,7 @@ function escapeHtml(value) {
 function readSavedTheme() {
   try {
     return localStorage.getItem(THEME_STORAGE_KEY) === "light"
-      ? "light"
-      : "dark";
+      ? "light" : "dark";
   } catch {
     return "dark";
   }
@@ -306,81 +390,53 @@ function saveTheme(theme) {
   try {
     localStorage.setItem(THEME_STORAGE_KEY, theme);
   } catch {
-    // El tema sigue funcionando aunque el navegador bloquee localStorage.
+    // El tema continúa funcionando aunque localStorage esté bloqueado.
   }
 }
 
 function applyTheme(theme, persist = true) {
   const normalizedTheme = theme === "light" ? "light" : "dark";
   const darkMode = normalizedTheme === "dark";
-
   document.documentElement.dataset.theme = normalizedTheme;
-
-  if (persist) {
-    saveTheme(normalizedTheme);
-  }
-
+  if (persist) saveTheme(normalizedTheme);
   const icon = themeToggle?.querySelector(".theme-icon");
   const text = themeToggle?.querySelector(".theme-text");
-
   if (icon) icon.textContent = darkMode ? "☀" : "☾";
   if (text) text.textContent = darkMode ? "Claro" : "Oscuro";
-
-  themeToggle?.setAttribute(
-    "aria-label",
-    darkMode ? "Activar modo claro" : "Activar modo oscuro",
-  );
-  themeToggle?.setAttribute(
-    "title",
-    darkMode ? "Cambiar a modo claro" : "Cambiar a modo oscuro",
-  );
+  themeToggle?.setAttribute("aria-label", darkMode ? "Activar modo claro" : "Activar modo oscuro");
+  themeToggle?.setAttribute("title", darkMode ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
   themeColorMeta?.setAttribute("content", darkMode ? "#08151c" : "#f7f9fc");
-}
-
-
-function initializeTheme() {
-  applyTheme(readSavedTheme(), false);
 }
 
 menuToggle?.addEventListener("click", () => {
   const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-
   menuToggle.setAttribute("aria-expanded", String(!isOpen));
   menuToggle.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
   menu?.classList.toggle("is-open", !isOpen);
-
   if (isOpen) closeSubmenu();
 });
 
 submenuTrigger?.addEventListener("click", (event) => {
-  if (!isCompactNavigation()) return;
-
   event.preventDefault();
   event.stopPropagation();
   toggleSubmenu();
 });
 
 themeToggle?.addEventListener("click", () => {
-  const nextTheme =
-    document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-  applyTheme(nextTheme);
+  applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
 });
 
 document.addEventListener("click", (event) => {
-  const printButton = event.target.closest("[data-print-section]");
+  const target = event.target;
+  if (!(target instanceof Element)) return;
+  const printButton = target.closest("[data-print-section]");
   if (printButton) {
     openPrintView(printButton.dataset.printSection);
     return;
   }
-
-  if (!submenuItem?.contains(event.target)) {
-    closeSubmenu();
-  }
-
-  const routeLink = event.target.closest("a[href^='#']");
-  if (routeLink && window.innerWidth <= MOBILE_BREAKPOINT) {
-    closeMobileMenu();
-  }
+  if (!submenuItem?.contains(target)) closeSubmenu();
+  const routeLink = target.closest("a[href^='#']");
+  if (routeLink && window.innerWidth <= MOBILE_BREAKPOINT) closeMobileMenu();
 });
 
 document.addEventListener("keydown", (event) => {
@@ -393,29 +449,19 @@ document.addEventListener("keydown", (event) => {
 window.addEventListener("hashchange", () => {
   const routeName = getRouteFromHash();
   const expectedHash = `#${routeName}`;
-
-  if (window.location.hash !== expectedHash) {
-    history.replaceState(null, "", expectedHash);
-  }
-
+  if (window.location.hash !== expectedHash) history.replaceState(null, "", expectedHash);
   loadRoute(routeName);
 });
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth > MOBILE_BREAKPOINT) {
-    closeMobileMenu();
-  }
+  if (window.innerWidth > MOBILE_BREAKPOINT) closeMobileMenu();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  initializeTheme();
-
+  applyTheme(readSavedTheme(), false);
+  renderFormulaSubmenu();
   const initialRoute = getRouteFromHash();
   const expectedHash = `#${initialRoute}`;
-
-  if (window.location.hash !== expectedHash) {
-    history.replaceState(null, "", expectedHash);
-  }
-
+  if (window.location.hash !== expectedHash) history.replaceState(null, "", expectedHash);
   loadRoute(initialRoute);
 });

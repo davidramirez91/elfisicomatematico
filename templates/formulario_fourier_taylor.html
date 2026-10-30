@@ -1,0 +1,100 @@
+<!-- Archivo editable: añade aquí tus tarjetas <section class="formula-card">. -->
+<section class="page-section formula-page" data-formula-page="formulario_fourier_taylor">
+  <nav class="formula-breadcrumb" aria-label="Ruta de navegación">
+    <a href="#formularios">← Volver a todos los formularios</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Fourier y Taylor</span>
+  </nav>
+  <article class="formula-panel is-active" id="formula-fourier" role="region" aria-labelledby="formula-fourier-title">
+    <header class="formula-panel-header">
+      <div>
+        <h2 id="formula-fourier-title">Cálculo 4 · Fourier y expansión de Taylor</h2>
+        <p>
+          Series de potencias, aproximación local y representación frecuencial.
+        </p>
+      </div>
+      <button
+        class="btn-print"
+        type="button"
+        data-print-section="formula-fourier"
+      >
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card wide">
+        <h3>Polinomio y serie de Taylor</h3>
+        $$P_n(x)=\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^k$$
+        $$f(x)=\sum_{k=0}^{\infty}\frac{f^{(k)}(a)}{k!}(x-a)^k$$
+        $$R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}$$
+        <p class="formula-note">
+          Cuando \(a=0\), la expansión se denomina serie de Maclaurin.
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Series de Maclaurin comunes</h3>
+        $$e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}$$ $$\sin
+        x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}$$ $$\cos
+        x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}$$
+        $$\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n,\qquad |x|<1$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Más expansiones frecuentes</h3>
+        $$\ln(1+x)=\sum_{n=1}^{\infty}(-1)^{n+1}\frac{x^n}{n},\qquad -1<x\le1$$
+        $$\arctan x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{2n+1},\qquad
+        |x|\le1$$ $$(1+x)^\alpha=\sum_{n=0}^{\infty}{\alpha\choose n}x^n$$
+        $${\alpha\choose n}=\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Serie de Fourier con periodo \(T\)</h3>
+        $$f(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left[a_n\cos(n\omega_0t)+b_n\sin(n\omega_0t)\right]$$
+        $$\omega_0=\frac{2\pi}{T}$$
+        $$a_0=\frac{2}{T}\int_{t_0}^{t_0+T}f(t)\,dt$$
+        $$a_n=\frac{2}{T}\int_{t_0}^{t_0+T}f(t)\cos(n\omega_0t)\,dt$$
+        $$b_n=\frac{2}{T}\int_{t_0}^{t_0+T}f(t)\sin(n\omega_0t)\,dt$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Forma en intervalo \([-L,L]\)</h3>
+        $$f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left[a_n\cos\left(\frac{n\pi
+        x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right]$$
+        $$a_n=\frac1L\int_{-L}^{L}f(x)\cos\left(\frac{n\pi x}{L}\right)dx$$
+        $$b_n=\frac1L\int_{-L}^{L}f(x)\sin\left(\frac{n\pi x}{L}\right)dx$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Simetrías</h3>
+        $$f(-x)=f(x)\quad\Longrightarrow\quad b_n=0$$ $$a_n=\frac{2}{L}\int_0^L
+        f(x)\cos\left(\frac{n\pi x}{L}\right)dx$$
+        $$f(-x)=-f(x)\quad\Longrightarrow\quad a_0=a_n=0$$
+        $$b_n=\frac{2}{L}\int_0^L f(x)\sin\left(\frac{n\pi x}{L}\right)dx$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Forma compleja de Fourier</h3>
+        $$f(t)=\sum_{n=-\infty}^{\infty}c_ne^{in\omega_0t}$$
+        $$c_n=\frac1T\int_{t_0}^{t_0+T}f(t)e^{-in\omega_0t}\,dt$$
+        $$c_0=\frac{a_0}{2},\qquad c_n=\frac{a_n-ib_n}{2}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Transformada de Fourier</h3>
+        $$F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt$$
+        $$f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{i\omega
+        t}\,d\omega$$ $$\mathcal{F}\{f'(t)\}=i\omega F(\omega)$$
+        $$\mathcal{F}\{f*g\}=F(\omega)G(\omega)$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Identidad de Parseval</h3>
+        $$\frac1T\int_{t_0}^{t_0+T}|f(t)|^2dt=\frac{a_0^2}{4}+\frac12\sum_{n=1}^{\infty}(a_n^2+b_n^2)$$
+        $$\int_{-\infty}^{\infty}|f(t)|^2dt=\frac{1}{2\pi}\int_{-\infty}^{\infty}|F(\omega)|^2d\omega$$
+      </section>
+    </div>
+  </article>
+  <nav class="formula-topic-navigation" data-topic-navigation aria-label="Otros formularios"></nav>
+</section>

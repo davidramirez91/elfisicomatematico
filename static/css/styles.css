@@ -1420,3 +1420,63 @@ mjx-container {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Selector de temas integrado en la navegación principal. */
+.menu-item--submenu {
+  gap: 0;
+}
+
+.menu-item--submenu > .submenu-trigger {
+  display: grid;
+  width: 32px;
+  min-width: 32px;
+  min-height: 36px;
+  margin-left: -3px;
+  padding: 4px;
+  place-items: center;
+}
+
+.menu-item--submenu > .submenu-trigger:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+.menu-item--submenu .submenu {
+  min-width: 260px;
+  max-height: min(65vh, 530px);
+  overflow-y: auto;
+}
+
+@media (max-width: 790px) {
+  .main-menu .menu-item--submenu {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 42px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .main-menu .menu-item--submenu > a {
+    min-width: 0;
+  }
+
+  .main-menu .menu-item--submenu > .submenu-trigger {
+    width: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    margin-left: 0;
+  }
+
+  .main-menu .menu-item--submenu .submenu {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .main-menu .menu-item--submenu.submenu-open .submenu {
+    max-height: min(60vh, 480px);
+    padding: 6px 0 6px 12px;
+    overflow-y: auto;
+  }
+}

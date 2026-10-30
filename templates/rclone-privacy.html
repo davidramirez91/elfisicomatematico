@@ -1,12 +1,74 @@
-<h1>Política de privacidad</h1>
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08151c" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="description" content="Política de privacidad de la integración personal de rclone con Google Drive." />
+  <title>Política de privacidad de rclone | EL FÍSICO MATEMÁTICO</title>
+  <link rel="icon" type="image/png" href="./static/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem("efm-theme") === "light" ? "light" : "dark"; }
+    catch { document.documentElement.dataset.theme = "dark"; }
+  </script>
+  <link rel="stylesheet" href="./static/css/styles.css" />
+  <link rel="stylesheet" href="./static/css/rclone.css" />
+  <script defer src="./static/js/rclone.js"></script>
+</head>
+<body class="rclone-body">
+  <a class="skip-link" href="#rclone-main">Saltar al contenido</a>
+  <div class="rclone-layout">
+    <header class="rclone-header">
+      <div class="rclone-brand" aria-label="EL FÍSICO MATEMÁTICO">
+        <span class="brand-logo" aria-hidden="true">
+          <img class="brand-logo-image brand-logo-image--dark" src="./static/img/logo.png" alt="" width="60" height="60" />
+          <img class="brand-logo-image brand-logo-image--light" src="./static/img/logo_2.png" alt="" width="60" height="60" />
+        </span>
+        <span class="brand-copy"><strong>EL FÍSICO MATEMÁTICO</strong><small>Integraciones técnicas · Uso personal</small></span>
+      </div>
+      <button class="rclone-theme-toggle" type="button" id="rclone-theme-toggle" aria-label="Cambiar tema" title="Cambiar tema"><span class="rclone-theme-icon" aria-hidden="true">☀</span><span class="rclone-theme-text">Claro</span></button>
+    </header>
 
-<p>Esta aplicación OAuth es de uso exclusivamente personal.</p>
+    <main id="rclone-main" class="rclone-main rclone-policy" tabindex="-1">
+      <a class="rclone-back" href="./rclone.html">← Volver a la información de rclone</a>
+      <span class="eyebrow">Uso exclusivamente personal</span>
+      <h1>Política de <span>privacidad</span></h1>
+      <p class="rclone-lead">Esta política describe el uso de los datos durante la autorización de rclone para acceder a Google Drive. La integración no está destinada a terceros.</p>
 
-<p>Se utiliza para permitir que rclone acceda a los archivos de
-Google Drive autorizados por el propietario de la cuenta.</p>
+      <div class="rclone-policy-sections">
+        <section class="rclone-card">
+          <h2>1. Finalidad</h2>
+          <p>La aplicación OAuth se utiliza exclusivamente para permitir que el propietario de la cuenta autorice a rclone a acceder a los archivos de Google Drive que haya permitido durante la autorización.</p>
+        </section>
+        <section class="rclone-card">
+          <h2>2. Información tratada</h2>
+          <p>rclone puede procesar los archivos y metadatos de Google Drive necesarios para ejecutar las operaciones autorizadas por el propietario. Esta página informativa no solicita datos personales mediante formularios.</p>
+        </section>
+        <section class="rclone-card">
+          <h2>3. Uso y compartición</h2>
+          <p>El acceso autorizado se destina a la gestión personal de archivos. La aplicación no comercializa ni vende información personal y no comparte datos con terceros como parte de este sitio informativo.</p>
+        </section>
+        <section class="rclone-card">
+          <h2>4. Almacenamiento de credenciales</h2>
+          <p>Las credenciales y los tokens de autorización de rclone se almacenan localmente en el equipo del usuario, en la configuración de rclone. No se reciben ni almacenan en estas páginas HTML.</p>
+        </section>
+        <section class="rclone-card">
+          <h2>5. Control y revocación</h2>
+          <p>El propietario puede revocar los permisos desde las opciones de seguridad y conexiones con aplicaciones de terceros de su Cuenta de Google, y también eliminar la configuración local de rclone.</p>
+        </section>
+        <section class="rclone-card">
+          <h2>6. Alcance de esta página</h2>
+          <p>Esta política corresponde únicamente a la integración personal de rclone con Google Drive; no describe la gestión de datos de los demás servicios académicos de EL FÍSICO MATEMÁTICO.</p>
+        </section>
+      </div>
+      <div class="rclone-policy-end"><a class="rclone-button" href="./rclone.html">Volver a rclone <span aria-hidden="true">→</span></a></div>
+    </main>
 
-<p>Esta aplicación no recopila, vende ni comparte información
-personal con terceros.</p>
-
-<p>Las credenciales de autorización de rclone se almacenan
-localmente en el equipo del usuario.</p>
+    <footer class="rclone-footer"><span>EL FÍSICO MATEMÁTICO</span><span>Política de privacidad · Integración de uso personal</span></footer>
+  </div>
+</body>
+</html>

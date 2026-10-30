@@ -232,3 +232,177 @@
   }
 }
 
+
+/* Biblioteca modular: cada tarjeta apunta a un HTML independiente. */
+.formula-catalog .section-heading {
+  max-width: 880px;
+}
+
+.formula-catalog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  gap: 10px;
+}
+
+.formula-catalog-meta span {
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-soft);
+  background: var(--surface-muted);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.formula-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.formula-topic-card {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  padding: 23px;
+  gap: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.formula-topic-card:hover,
+.formula-topic-card:focus-visible {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+.formula-topic-icon {
+  display: grid;
+  flex: 0 0 70px;
+  width: 70px;
+  min-height: 70px;
+  place-items: center;
+  border-radius: 18px;
+  color: var(--primary-strong);
+  background: color-mix(in srgb, var(--primary) 14%, var(--surface-muted));
+  font-family: Georgia, serif;
+  font-size: clamp(1.2rem, 2vw, 1.9rem);
+  font-weight: 700;
+}
+
+.formula-topic-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--text-soft);
+  font-size: .94rem;
+}
+
+.formula-topic-copy strong {
+  color: var(--primary-strong);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1.16rem;
+  line-height: 1.35;
+}
+
+.formula-topic-category {
+  color: var(--secondary);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.formula-topic-action {
+  margin-top: 9px;
+  color: var(--primary-strong);
+  font-weight: 800;
+}
+
+.formula-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 10px;
+  color: var(--text-soft);
+  font-size: .9rem;
+}
+
+.formula-breadcrumb a {
+  color: var(--primary-strong);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.formula-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.formula-topic-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 28px;
+  gap: 12px;
+}
+
+.formula-topic-navigation a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--primary-strong);
+  background: var(--surface-solid);
+  font-size: .85rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+}
+
+.formula-topic-navigation a:hover,
+.formula-topic-navigation a:focus-visible {
+  border-color: var(--primary);
+  background: var(--surface-muted);
+}
+
+@media (max-width: 790px) {
+  .formula-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .formula-topic-card {
+    padding: 17px;
+    gap: 13px;
+  }
+
+  .formula-topic-icon {
+    flex-basis: 52px;
+    width: 52px;
+    min-height: 52px;
+    border-radius: 14px;
+    font-size: 1.2rem;
+  }
+
+  .formula-topic-navigation {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .formula-topic-navigation > span {
+    display: none;
+  }
+}

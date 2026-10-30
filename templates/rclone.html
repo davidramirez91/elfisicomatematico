@@ -1,8 +1,67 @@
-<h1>rclone - Google Drive</h1>
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08151c" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="description" content="Información de la integración privada de rclone con Google Drive para uso personal." />
+  <title>rclone · Integración personal | EL FÍSICO MATEMÁTICO</title>
+  <link rel="icon" type="image/png" href="./static/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem("efm-theme") === "light" ? "light" : "dark"; }
+    catch { document.documentElement.dataset.theme = "dark"; }
+  </script>
+  <link rel="stylesheet" href="./static/css/styles.css" />
+  <link rel="stylesheet" href="./static/css/rclone.css" />
+  <script defer src="./static/js/rclone.js"></script>
+</head>
+<body class="rclone-body">
+  <a class="skip-link" href="#rclone-main">Saltar al contenido</a>
+  <div class="rclone-layout">
+    <header class="rclone-header">
+      <div class="rclone-brand" aria-label="EL FÍSICO MATEMÁTICO">
+        <span class="brand-logo" aria-hidden="true">
+          <img class="brand-logo-image brand-logo-image--dark" src="./static/img/logo.png" alt="" width="60" height="60" />
+          <img class="brand-logo-image brand-logo-image--light" src="./static/img/logo_2.png" alt="" width="60" height="60" />
+        </span>
+        <span class="brand-copy"><strong>EL FÍSICO MATEMÁTICO</strong><small>Integraciones técnicas · Uso personal</small></span>
+      </div>
+      <button class="rclone-theme-toggle" type="button" id="rclone-theme-toggle" aria-label="Cambiar tema" title="Cambiar tema"><span class="rclone-theme-icon" aria-hidden="true">☀</span><span class="rclone-theme-text">Claro</span></button>
+    </header>
 
-<p>Esta aplicación OAuth es de uso personal y se utiliza para
-autorizar rclone a acceder a mi cuenta de Google Drive.</p>
+    <main id="rclone-main" class="rclone-main" tabindex="-1">
+      <span class="eyebrow">Aplicación OAuth · Uso personal</span>
+      <h1>rclone <span>+ Google Drive</span></h1>
+      <p class="rclone-lead">Esta página documenta la autorización de rclone para acceder a la cuenta de Google Drive del propietario. Es una integración técnica de uso exclusivamente personal, separada de los servicios académicos del sitio.</p>
 
-<p>
-<a href="rclone-privacy.html">Política de privacidad</a>
-</p>
+      <div class="rclone-grid">
+        <section class="rclone-card">
+          <div class="rclone-card-icon" aria-hidden="true">01</div>
+          <h2>¿Para qué se utiliza?</h2>
+          <p>Permite que el propietario autorice a <strong>rclone</strong> a interactuar con los archivos de Google Drive permitidos por la autorización concedida.</p>
+        </section>
+        <section class="rclone-card">
+          <div class="rclone-card-icon" aria-hidden="true">02</div>
+          <h2>¿Quién puede utilizarla?</h2>
+          <p>Está destinada únicamente al titular de la cuenta. No constituye una herramienta pública ni ofrece registro o acceso para visitantes.</p>
+        </section>
+      </div>
+
+      <section class="rclone-privacy-callout" aria-labelledby="privacy-title">
+        <div>
+          <span class="rclone-kicker">Transparencia y protección de datos</span>
+          <h2 id="privacy-title">Política de privacidad</h2>
+          <p>Consulta qué información utiliza la integración, cómo se gestionan las credenciales locales y cómo revocar el acceso.</p>
+        </div>
+        <a class="rclone-button" href="./rclone-privacy.html">Consultar política <span aria-hidden="true">→</span></a>
+      </section>
+    </main>
+
+    <footer class="rclone-footer"><span>EL FÍSICO MATEMÁTICO</span><span>Integración privada · Sin acceso desde la navegación pública</span></footer>
+  </div>
+</body>
+</html>

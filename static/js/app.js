@@ -126,8 +126,12 @@ function normalizeRoute(routeName) {
   return ROUTE_ALIASES[normalized] || normalized;
 }
 
+// Los fragmentos #... siguen siendo la navegación habitual.
+// Para compartir una sección con vista previa social, también aceptamos
+// ?seccion=..., porque los rastreadores HTTP no reciben fragmentos de URL.
 function getRouteFromHash() {
-  const routeName = normalizeRoute(window.location.hash);
+  const sharedRoute = new URLSearchParams(window.location.search).get("seccion");
+  const routeName = normalizeRoute(window.location.hash || sharedRoute);
   return Object.hasOwn(ROUTES, routeName) ? routeName : "inicio";
 }
 

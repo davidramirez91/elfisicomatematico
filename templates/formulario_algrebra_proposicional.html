@@ -11,7 +11,7 @@
     <header class="formula-panel-header">
       <div>
         <h2 id="formula-algrebra-proposicional-title">Álgebra proposicional</h2>
-        <p>Conectores, tablas de verdad, leyes de equivalencia y reglas de inferencia de la lógica clásica bivalente.</p>
+        <p>Tablas de verdad, leyes de lógica proposicional, reglas de inferencia y leyes de lógica de conjuntos.</p>
       </div>
       <button class="btn-print" type="button" data-print-section="formula-algrebra-proposicional">
         Imprimir este formulario
@@ -22,10 +22,14 @@
       <section class="formula-card wide">
         <h3>Notación y conceptos fundamentales</h3>
         <p><strong>Proposición:</strong> enunciado que es verdadero (V) o falso (F). Esta guía emplea lógica proposicional clásica de dos valores.</p>
-        <p>\(\neg\) negación; \(\land\) conjunción (y); \(\lor\) disyunción inclusiva (o); \(\oplus\) disyunción exclusiva (o bien uno u otro); \(\to\) condicional; \(\leftrightarrow\) bicondicional.</p>
+        <p>\(\neg\) negación; \(\land\) conjunción (y); \(\lor\) disyunción inclusiva (o); \(\mathbin{\triangle}\) disyunción exclusiva (o bien uno u otro); \(\to\) condicional; \(\leftrightarrow\) bicondicional.</p>
         <p>\(\top\) = tautología (siempre verdadera); \(\bot\) = contradicción (siempre falsa).</p>
         <p><strong>Equivalencia lógica:</strong> \(A\equiv B\) significa que ambas expresiones tienen idéntica tabla de verdad. <strong>Consecuencia lógica:</strong> \(A\models B\) significa que siempre que A sea verdadera, B también lo es; no exige que sean equivalentes.</p>
-        <p class="formula-note"><strong>Prioridad convencional:</strong> paréntesis, \(\neg\), \(\land\), \(\lor\) / \(\oplus\), \(\to\) y \(\leftrightarrow\). Para evitar ambigüedades, utiliza siempre paréntesis.</p>
+        <p class="formula-note"><strong>Prioridad convencional:</strong> paréntesis, \(\neg\), \(\land\), \(\lor\) / \(\mathbin{\triangle}\), \(\to\) y \(\leftrightarrow\). Para evitar ambigüedades, utiliza siempre paréntesis.</p>
+      </section>
+
+      <section class="formula-card wide" aria-labelledby="titulo-tablas-verdad">
+        <h3 id="titulo-tablas-verdad" style="margin-bottom: 0; font-size: clamp(1.18rem, 2.2vw, 1.55rem); text-align: center;">TABLAS DE VERDAD PARA CONECTORES LÓGICOS</h3>
       </section>
 
       <section class="formula-card wide">
@@ -44,12 +48,12 @@
 
       <section class="formula-card wide">
         <h3>Tablas de verdad · Conectores principales</h3>
-        <p><strong>Disyunción inclusiva:</strong> \(p\lor q\) es verdadera si al menos una proposición es verdadera. <strong>Disyunción exclusiva:</strong> \(p\oplus q\) es verdadera si exactamente una lo es.</p>
+        <p><strong>Disyunción inclusiva:</strong> \(p\lor q\) es verdadera si al menos una proposición es verdadera. <strong>Disyunción exclusiva:</strong> \(p\mathbin{\triangle} q\) es verdadera si exactamente una lo es.</p>
         <p><strong>Condicional:</strong> \(p\to q\) solo es falsa cuando \(p\) es verdadera y \(q\) es falsa. <strong>Bicondicional:</strong> \(p\leftrightarrow q\) es verdadera cuando tienen el mismo valor.</p>
               <div style="overflow-x: auto;">
         <table>
           <caption style="padding: 0 0 10px; text-align: left; color: var(--text-soft);">Tablas para dos proposiciones; V = verdadero, F = falso.</caption>
-          <thead><tr><th scope="col">\(p\)</th><th scope="col">\(q\)</th><th scope="col">\(p\land q\)</th><th scope="col">\(p\lor q\)</th><th scope="col">\(p\oplus q\)</th><th scope="col">\(p\to q\)</th><th scope="col">\(p\leftrightarrow q\)</th></tr></thead>
+          <thead><tr><th scope="col">\(p\)</th><th scope="col">\(q\)</th><th scope="col">\(p\land q\)</th><th scope="col">\(p\lor q\)</th><th scope="col">\(p\mathbin{\triangle} q\)</th><th scope="col">\(p\to q\)</th><th scope="col">\(p\leftrightarrow q\)</th></tr></thead>
           <tbody>
             <tr><th scope="row">V</th><td>V</td><td>V</td><td>V</td><td>F</td><td>V</td><td>V</td></tr>
             <tr><th scope="row">V</th><td>F</td><td>F</td><td>V</td><td>V</td><td>F</td><td>F</td></tr>
@@ -60,34 +64,8 @@
       </div>
       </section>
 
-      <section class="formula-card wide">
-        <h3>Tablas de verdad · Conectores derivados</h3>
-        <p>NAND (Sheffer) es la negación de la conjunción; NOR (Peirce) es la negación de la disyunción. Ambos son conectores funcionalmente completos.</p>
-              <div style="overflow-x: auto;">
-        <table>
-          <caption style="padding: 0 0 10px; text-align: left; color: var(--text-soft);">Conectores negados: NAND y NOR.</caption>
-          <thead><tr><th scope="col">\(p\)</th><th scope="col">\(q\)</th><th scope="col">\(\neg(p\land q)\)</th><th scope="col">\(\neg(p\lor q)\)</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">V</th><td>V</td><td>F</td><td>F</td></tr>
-            <tr><th scope="row">V</th><td>F</td><td>V</td><td>F</td></tr>
-            <tr><th scope="row">F</th><td>V</td><td>V</td><td>F</td></tr>
-            <tr><th scope="row">F</th><td>F</td><td>V</td><td>V</td></tr>
-          </tbody>
-        </table>
-      </div>
-        <h4>Negación de implicación y equivalencia</h4>
-              <div style="overflow-x: auto;">
-        <table>
-          <caption style="padding: 0 0 10px; text-align: left; color: var(--text-soft);">Negación de la condicional y de la bicondicional.</caption>
-          <thead><tr><th scope="col">\(p\)</th><th scope="col">\(q\)</th><th scope="col">\(\neg(p\to q)\)</th><th scope="col">\(\neg(p\leftrightarrow q)\)</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">V</th><td>V</td><td>F</td><td>F</td></tr>
-            <tr><th scope="row">V</th><td>F</td><td>V</td><td>V</td></tr>
-            <tr><th scope="row">F</th><td>V</td><td>F</td><td>V</td></tr>
-            <tr><th scope="row">F</th><td>F</td><td>F</td><td>F</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <section class="formula-card wide" aria-labelledby="titulo-leyes-proposicionales">
+        <h3 id="titulo-leyes-proposicionales" style="margin-bottom: 0; font-size: clamp(1.18rem, 2.2vw, 1.55rem); text-align: center;">LEYES DE LÓGICA PROPOSICIONAL</h3>
       </section>
 
       <section class="formula-card">
@@ -124,7 +102,7 @@
         <h3>6. Conmutatividad</h3>
         $$p\lor q\equiv q\lor p$$
         $$p\land q\equiv q\land p$$
-        $$p\oplus q\equiv q\oplus p$$
+        $$p\mathbin{\triangle} q\equiv q\mathbin{\triangle} p$$
         $$p\leftrightarrow q\equiv q\leftrightarrow p$$
       </section>
 
@@ -132,7 +110,7 @@
         <h3>7. Asociatividad</h3>
         $$(p\lor q)\lor r\equiv p\lor(q\lor r)$$
         $$(p\land q)\land r\equiv p\land(q\land r)$$
-        $$(p\oplus q)\oplus r\equiv p\oplus(q\oplus r)$$
+        $$(p\mathbin{\triangle} q)\mathbin{\triangle} r\equiv p\mathbin{\triangle}(q\mathbin{\triangle} r)$$
       </section>
 
       <section class="formula-card">
@@ -175,22 +153,22 @@
         $$p\leftrightarrow q\equiv(p\to q)\land(q\to p)$$
         $$p\leftrightarrow q\equiv(p\land q)\lor(\neg p\land\neg q)$$
         $$p\leftrightarrow q\equiv(\neg p\lor q)\land(\neg q\lor p)$$
-        $$p\leftrightarrow q\equiv\neg(p\oplus q)$$
+        $$p\leftrightarrow q\equiv\neg(p\mathbin{\triangle} q)$$
       </section>
 
       <section class="formula-card">
         <h3>14. Diferencia simétrica (XOR)</h3>
-        $$p\oplus q\equiv(p\lor q)\land\neg(p\land q)$$
-        $$p\oplus q\equiv(p\land\neg q)\lor(\neg p\land q)$$
-        $$p\oplus q\equiv\neg(p\leftrightarrow q)$$
+        $$p\mathbin{\triangle} q\equiv(p\lor q)\land\neg(p\land q)$$
+        $$p\mathbin{\triangle} q\equiv(p\land\neg q)\lor(\neg p\land q)$$
+        $$p\mathbin{\triangle} q\equiv\neg(p\leftrightarrow q)$$
       </section>
 
       <section class="formula-card">
         <h3>15. Identidades de XOR</h3>
-        $$p\oplus\bot\equiv p$$
-        $$p\oplus\top\equiv\neg p$$
-        $$p\oplus p\equiv\bot$$
-        $$p\oplus\neg p\equiv\top$$
+        $$p\mathbin{\triangle}\bot\equiv p$$
+        $$p\mathbin{\triangle}\top\equiv\neg p$$
+        $$p\mathbin{\triangle} p\equiv\bot$$
+        $$p\mathbin{\triangle}\neg p\equiv\top$$
       </section>
 
       <section class="formula-card">
@@ -299,6 +277,94 @@
         $$p\land q\not\equiv p\qquad\text{(no son equivalentes)}$$
         $$p\to q\equiv\neg p\lor q\qquad\text{(equivalencia válida)}$$
         <p class="formula-note">Para comprobar una equivalencia, compara todas las filas de ambas columnas en sus tablas de verdad. Para comprobar una inferencia, busca si existe alguna fila con todas las premisas verdaderas y la conclusión falsa: si existe, la inferencia es inválida.</p>
+      </section>
+
+      <!-- LEYES DE LÓGICA DE CONJUNTOS -->
+      <section class="formula-card wide" aria-labelledby="titulo-leyes-conjuntos">
+        <h3 id="titulo-leyes-conjuntos" style="margin-bottom: 0; font-size: clamp(1.18rem, 2.2vw, 1.55rem); text-align: center;">LEYES DE LÓGICA DE CONJUNTOS</h3>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Notación de conjuntos</h3>
+        <p>Sean \(A\), \(B\) y \(C\) subconjuntos del universo \(U\). Se utiliza \(\varnothing\) para el conjunto vacío; \(\cup\) para unión; \(\cap\) para intersección; \(A^c=U\setminus A\) para complemento; \(A\setminus B\) para diferencia y \(A\mathbin{\triangle}B\) para diferencia simétrica.</p>
+        <p class="formula-note">El complemento siempre se toma respecto del universo \(U\). Las igualdades siguientes son identidades de conjuntos, válidas para todos los subconjuntos indicados.</p>
+      </section>
+
+      <section class="formula-card">
+        <h3>1. Idempotencia</h3>
+        $$A\cup A=A$$
+        $$A\cap A=A$$
+        $$(A\cup B)\cup(A\cup B)=A\cup B$$
+      </section>
+
+      <section class="formula-card">
+        <h3>2. Conmutatividad</h3>
+        $$A\cup B=B\cup A$$
+        $$A\cap B=B\cap A$$
+        $$A\mathbin{\triangle}B=B\mathbin{\triangle}A$$
+      </section>
+
+      <section class="formula-card">
+        <h3>3. Asociatividad</h3>
+        $$A\cup(B\cup C)=(A\cup B)\cup C$$
+        $$A\cap(B\cap C)=(A\cap B)\cap C$$
+        $$A\mathbin{\triangle}(B\mathbin{\triangle}C)=(A\mathbin{\triangle}B)\mathbin{\triangle}C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>4. Distributividad</h3>
+        $$A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$$
+        $$A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>5. Absorción</h3>
+        $$A\cup(A\cap B)=A$$
+        $$A\cap(A\cup B)=A$$
+        $$A\cup(A^c\cap B)=A\cup B$$
+        $$A\cap(A^c\cup B)=A\cap B$$
+      </section>
+
+      <section class="formula-card">
+        <h3>6. Leyes de De Morgan y diferencia</h3>
+        $$(A\cup B)^c=A^c\cap B^c$$
+        $$(A\cap B)^c=A^c\cup B^c$$
+        $$A\setminus B=A\cap B^c$$
+        <p class="formula-note">La diferencia \(A\setminus B\) se expresa como intersección con el complemento de \(B\); esta última igualdad no es, en sentido estricto, una ley de De Morgan.</p>
+      </section>
+
+      <section class="formula-card">
+        <h3>7. Leyes del complemento</h3>
+        $$A\cup A^c=U$$
+        $$A\cap A^c=\varnothing$$
+        $$U\setminus A=A^c$$
+        $$U^c=\varnothing,\qquad \varnothing^c=U$$
+      </section>
+
+      <section class="formula-card">
+        <h3>8. Identidad y dominación</h3>
+        $$A\cup\varnothing=A$$
+        $$A\cap U=A$$
+        $$A\cup U=U$$
+        $$A\cap\varnothing=\varnothing$$
+        $$A\mathbin{\triangle}\varnothing=A$$
+        <p class="formula-note">Las dos primeras igualdades son leyes de identidad; las dos siguientes, de dominación. La última es la identidad para diferencia simétrica.</p>
+      </section>
+
+      <section class="formula-card">
+        <h3>9. Involución o doble complemento</h3>
+        $$(A^c)^c=A$$
+        $$\bigl((A^c)^c\bigr)^c=A^c$$
+        <p class="formula-note"><strong>Corrección de la imagen:</strong> aplicar el complemento tres veces da \(A^c\), no \(A\).</p>
+      </section>
+
+      <section class="formula-card">
+        <h3>10. Diferencia simétrica</h3>
+        $$A\mathbin{\triangle}B=(A\cup B)\setminus(A\cap B)$$
+        $$A\mathbin{\triangle}B=(A\setminus B)\cup(B\setminus A)$$
+        $$A\mathbin{\triangle}B=(A\cap B^c)\cup(B\cap A^c)$$
+        $$A\mathbin{\triangle}A=\varnothing,\qquad A\mathbin{\triangle}U=A^c$$
+        <p class="formula-note">El símbolo \(\triangle\) significa pertenecer exactamente a uno de los dos conjuntos; corresponde al conector lógico XOR.</p>
       </section>
     </div>
   </article>

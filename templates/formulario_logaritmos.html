@@ -1,0 +1,135 @@
+<!-- Archivo editable: añade aquí tus tarjetas <section class="formula-card">. -->
+<section
+  class="page-section formula-page"
+  data-formula-page="formulario_logaritmos"
+>
+  <nav class="formula-breadcrumb" aria-label="Ruta de navegación">
+    <a href="#formularios">← Volver a todos los formularios</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Potencias y logaritmos</span>
+  </nav>
+
+  <article
+    class="formula-panel is-active"
+    id="formula-logaritmos"
+    role="region"
+    aria-labelledby="formula-logaritmos-title"
+  >
+    <header class="formula-panel-header">
+      <div>
+        <h2 id="formula-logaritmos-title">Potencias y logaritmos</h2>
+        <p>
+          Propiedades de los exponentes, radicales, funciones exponenciales y
+          leyes de los logaritmos.
+        </p>
+      </div>
+      <button
+        class="btn-print"
+        type="button"
+        data-print-section="formula-logaritmos"
+      >
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card">
+        <h3>Propiedades de las potencias</h3>
+        $$a^m\cdot a^n=a^{m+n}$$ $$\frac{a^m}{a^n}=a^{m-n},\qquad a\ne0$$
+        $$(a^m)^n=a^{mn}$$ $$(ab)^n=a^nb^n$$ $$\left(\frac
+        ab\right)^n=\frac{a^n}{b^n},\qquad b\ne0$$
+        <p class="formula-note">
+          Para exponentes reales generales se considera una base positiva; las
+          restricciones adicionales dependen de la expresión.
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Exponente cero, negativo y fraccionario</h3>
+        $$a^0=1,\qquad a\ne0$$ $$a^{-n}=\frac1{a^n},\qquad a\ne0$$
+        $$a^{1/n}=\sqrt[n]{a}$$ $$a^{m/n}=\sqrt[n]{a^m}=(\sqrt[n]{a})^m$$
+        $$\sqrt[n]{a}\,\sqrt[n]{b}=\sqrt[n]{ab}$$
+        <p class="formula-note">
+          Para las fórmulas con raíces y exponentes fraccionarios, suponemos
+          \(a,b>0\) y \(n\in\mathbb{N}\), \(n>0\).
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Relación entre potencias y raíces</h3>
+        $$\sqrt[n]{a^n}=\begin{cases}|a|,&n\text{ par}\\a,&n\text{
+        impar}\end{cases}$$
+        $$\sqrt[n]{\frac{a}{b}}=\frac{\sqrt[n]{a}}{\sqrt[n]{b}}$$
+        $$\sqrt[m]{\sqrt[n]{a}}=\sqrt[mn]{a}$$
+        <p class="formula-note">
+          En cocientes y raíces anidadas, presupón radicandos positivos y
+          denominadores distintos de cero.
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Definición de logaritmo</h3>
+        $$\log_a(x)=y\quad\Longleftrightarrow\quad a^y=x$$
+        $$\log_a(1)=0,\qquad\log_a(a)=1$$
+        $$a^{\log_a(x)}=x,\qquad\log_a(a^x)=x$$
+        <p class="formula-note">
+          Condiciones reales: \(a>0\), \(a\ne1\) y argumento \(x>0\).
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Leyes de los logaritmos</h3>
+        $$\log_a(xy)=\log_a(x)+\log_a(y)$$ $$\log_a\left(\frac
+        xy\right)=\log_a(x)-\log_a(y)$$ $$\log_a(x^r)=r\log_a(x)$$
+        $$\log_a\left(\sqrt[n]{x}\right)=\frac1n\log_a(x)$$
+        <p class="formula-note">
+          Se supone \(x,y>0\), \(a>0\), \(a\ne1\) y \(n\) entero positivo.
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Cambio de base</h3>
+        $$\log_a(x)=\frac{\ln x}{\ln a}=\frac{\log_b(x)}{\log_b(a)}$$
+        $$\log_a(b)=\frac1{\log_b(a)}$$ $$\log_a(b)\,\log_b(c)=\log_a(c)$$
+        <p class="formula-note">
+          Bases positivas distintas de 1; argumentos positivos.
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Logaritmos comunes y naturales</h3>
+        $$\ln(x)=\log_e(x),\qquad e\approx2.71828$$
+        $$\log(x)=\log_{10}(x)\quad\text{(convención habitual)}$$
+        $$\ln(1)=0,\qquad \ln(e)=1$$ $$\ln(e^x)=x,\qquad
+        e^{\ln(x)}=x\quad(x>0)$$ $$\log_{10}(10^x)=x$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ecuaciones exponenciales y logarítmicas</h3>
+        $$a^x=b\quad\Longrightarrow\quad x=\log_a(b)$$
+        $$\log_a(f(x))=c\quad\Longleftrightarrow\quad f(x)=a^c$$
+        $$\log_a(f(x))=\log_a(g(x))\quad\Longleftrightarrow\quad f(x)=g(x)$$
+        <p class="formula-note">
+          Comprueba siempre que los argumentos logarítmicos sean positivos y que
+          \(a>0\), \(a\ne1\), \(b>0\).
+        </p>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Crecimiento, decrecimiento y precauciones</h3>
+        $$a>1\quad\Longrightarrow\quad a^x\text{ y }\log_a(x)\text{ son
+        crecientes}$$ $$\log_a(x+y)\ne\log_a(x)+\log_a(y)\quad\text{(en
+        general)}$$
+        <p class="formula-note">
+          En desigualdades, al aplicar una función logarítmica con base entre 0
+          y 1 se invierte el sentido de la desigualdad.
+        </p>
+      </section>
+    </div>
+  </article>
+  <nav
+    class="formula-topic-navigation"
+    data-topic-navigation
+    aria-label="Otros formularios"
+  ></nav>
+</section>

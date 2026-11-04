@@ -1,0 +1,102 @@
+<!-- Archivo editable: añade aquí tus tarjetas <section class="formula-card">. -->
+<section class="page-section formula-page" data-formula-page="formulario_derivadas">
+  <nav class="formula-breadcrumb" aria-label="Ruta de navegación">
+    <a href="#formularios">← Volver a todos los formularios</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Límites y derivadas</span>
+  </nav>
+  <article class="formula-panel is-active" id="formula-derivadas" role="region" aria-labelledby="formula-derivadas-title">
+    <header class="formula-panel-header">
+      <div>
+        <h2 id="formula-derivadas-title">Cálculo 1 · Límites y derivadas</h2>
+        <p>Propiedades, límites notables y reglas de derivación.</p>
+      </div>
+      <button
+        class="btn-print"
+        type="button"
+        data-print-section="formula-derivadas"
+      >
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card">
+        <h3>Propiedades de límites</h3>
+        $$\lim_{x\to a}[f(x)\pm g(x)]=L\pm M$$ $$\lim_{x\to a}[c\,f(x)]=cL$$
+        $$\lim_{x\to a}[f(x)g(x)]=LM$$ $$\lim_{x\to
+        a}\frac{f(x)}{g(x)}=\frac{L}{M},\qquad M\ne0$$ $$\lim_{x\to
+        a}[f(x)]^n=L^n$$ $$\lim_{x\to a}\sqrt[n]{f(x)}=\sqrt[n]{L}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Límites notables</h3>
+        $$\lim_{x\to0}\frac{\sin x}{x}=1$$ $$\lim_{x\to0}\frac{\tan x}{x}=1$$
+        $$\lim_{x\to0}\frac{1-\cos x}{x^2}=\frac12$$
+        $$\lim_{x\to0}\frac{e^x-1}{x}=1$$ $$\lim_{x\to0}\frac{\ln(1+x)}{x}=1$$
+        $$\lim_{x\to\infty}\left(1+\frac1x\right)^x=e$$
+        $$\lim_{x\to0}(1+x)^{1/x}=e$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Definición de derivada</h3>
+        $$f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}$$ $$f'(a)=\lim_{x\to
+        a}\frac{f(x)-f(a)}{x-a}$$ $$m_{\text{tangente}}=f'(a)$$
+        $$y-f(a)=f'(a)(x-a)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Reglas algebraicas</h3>
+        $$\frac{d}{dx}(C)=0,\qquad \frac{d}{dx}(x)=1$$ $$\frac{d}{dx}(u^n)=n
+        u^{n-1}u'$$ $$\frac{d}{dx}(u\pm v)=u'\pm v'$$
+        $$\frac{d}{dx}(uv)=u'v+uv'$$ $$\frac{d}{dx}\left(\frac
+        uv\right)=\frac{u'v-uv'}{v^2}$$ $$\frac{d}{dx}f(g(x))=f'(g(x))g'(x)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Exponenciales y logaritmos</h3>
+        $$\frac{d}{dx}(e^u)=e^u u'$$ $$\frac{d}{dx}(a^u)=a^u\ln(a)u'$$
+        $$\frac{d}{dx}(\ln|u|)=\frac{u'}u$$ $$\frac{d}{dx}(\log_a
+        u)=\frac{u'}{u\ln a}$$ $$\frac{d}{dx}(u^v)=u^v\left(v'\ln
+        u+v\frac{u'}u\right)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Funciones trigonométricas</h3>
+        $$\frac{d}{dx}(\sin u)=\cos u\,u'$$ $$\frac{d}{dx}(\cos u)=-\sin u\,u'$$
+        $$\frac{d}{dx}(\tan u)=\sec^2u\,u'$$ $$\frac{d}{dx}(\cot
+        u)=-\csc^2u\,u'$$ $$\frac{d}{dx}(\sec u)=\sec u\tan u\,u'$$
+        $$\frac{d}{dx}(\csc u)=-\csc u\cot u\,u'$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Trigonométricas inversas</h3>
+        $$\frac{d}{dx}(\arcsin u)=\frac{u'}{\sqrt{1-u^2}}$$
+        $$\frac{d}{dx}(\arccos u)=-\frac{u'}{\sqrt{1-u^2}}$$
+        $$\frac{d}{dx}(\arctan u)=\frac{u'}{1+u^2}$$
+        $$\frac{d}{dx}(\operatorname{arccot}u)=-\frac{u'}{1+u^2}$$
+        $$\frac{d}{dx}(\operatorname{arcsec}u)=\frac{u'}{|u|\sqrt{u^2-1}}$$
+        $$\frac{d}{dx}(\operatorname{arccsc}u)=-\frac{u'}{|u|\sqrt{u^2-1}}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Funciones hiperbólicas</h3>
+        $$\frac{d}{dx}(\sinh u)=\cosh u\,u'$$ $$\frac{d}{dx}(\cosh u)=\sinh
+        u\,u'$$ $$\frac{d}{dx}(\tanh u)=\operatorname{sech}^2u\,u'$$
+        $$\frac{d}{dx}(\coth u)=-\operatorname{csch}^2u\,u'$$
+        $$\frac{d}{dx}(\operatorname{sech}u)=-\operatorname{sech}u\tanh u\,u'$$
+        $$\frac{d}{dx}(\operatorname{csch}u)=-\operatorname{csch}u\coth u\,u'$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Derivación implícita, paramétrica y aproximación lineal</h3>
+        $$F(x,y)=0\qquad\Longrightarrow\qquad \frac{dy}{dx}=-\frac{F_x}{F_y}$$
+        $$x=x(t),\ y=y(t)\qquad\Longrightarrow\qquad
+        \frac{dy}{dx}=\frac{dy/dt}{dx/dt}$$
+        $$\frac{d^2y}{dx^2}=\frac{d}{dt}\left(\frac{dy}{dx}\right)\Big/\frac{dx}{dt}$$
+        $$L(x)=f(a)+f'(a)(x-a)$$ $$dy=f'(x)\,dx$$
+      </section>
+    </div>
+  </article>
+  <nav class="formula-topic-navigation" data-topic-navigation aria-label="Otros formularios"></nav>
+</section>

@@ -1,0 +1,115 @@
+<!-- Archivo editable: añade aquí tus tarjetas <section class="formula-card">. -->
+<section class="page-section formula-page" data-formula-page="formulario_edos">
+  <nav class="formula-breadcrumb" aria-label="Ruta de navegación">
+    <a href="#formularios">← Volver a todos los formularios</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Ecuaciones diferenciales</span>
+  </nav>
+  <article class="formula-panel is-active" id="formula-edos" role="region" aria-labelledby="formula-edos-title">
+    <header class="formula-panel-header">
+      <div>
+        <h2 id="formula-edos-title">Cálculo 3 · Ecuaciones diferenciales</h2>
+        <p>
+          Modelos de primer orden, orden superior, sistemas y transformada de
+          Laplace.
+        </p>
+      </div>
+      <button class="btn-print" type="button" data-print-section="formula-edos">
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card">
+        <h3>Variables separables</h3>
+        $$\frac{dy}{dx}=g(x)h(y)$$ $$\frac{dy}{h(y)}=g(x)\,dx$$
+        $$\int\frac{dy}{h(y)}=\int g(x)\,dx+C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ecuación lineal de primer orden</h3>
+        $$y'+P(x)y=Q(x)$$ $$\mu(x)=e^{\int P(x)\,dx}$$
+        $$y=\frac{1}{\mu(x)}\left[\int \mu(x)Q(x)\,dx+C\right]$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ecuación de Bernoulli</h3>
+        $$y'+P(x)y=Q(x)y^n$$ $$v=y^{1-n}$$ $$v'+(1-n)P(x)v=(1-n)Q(x)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ecuaciones exactas</h3>
+        $$M(x,y)\,dx+N(x,y)\,dy=0$$ $$\frac{\partial M}{\partial
+        y}=\frac{\partial N}{\partial x}$$ $$\psi_x=M,\qquad \psi_y=N,\qquad
+        \psi(x,y)=C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Homogéneas de primer orden</h3>
+        $$\frac{dy}{dx}=F\left(\frac yx\right)$$ $$v=\frac yx,\qquad y=vx,\qquad
+        y'=v+xv'$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Crecimiento, decaimiento y logística</h3>
+        $$\frac{dP}{dt}=kP\qquad\Longrightarrow\qquad P(t)=P_0e^{kt}$$
+        $$\frac{dP}{dt}=rP\left(1-\frac PK\right)$$
+        $$P(t)=\frac{K}{1+Ae^{-rt}},\qquad A=\frac{K-P_0}{P_0}$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Ecuaciones lineales homogéneas de orden superior</h3>
+        $$a_ny^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_1y'+a_0y=0$$
+        $$a_nr^n+a_{n-1}r^{n-1}+\cdots+a_1r+a_0=0$$
+        <h4>Raíces reales distintas</h4>
+        $$y=C_1e^{r_1x}+C_2e^{r_2x}+\cdots+C_ne^{r_nx}$$
+        <h4>Raíz real repetida \(r\) de multiplicidad \(m\)</h4>
+        $$y=e^{rx}\left(C_1+C_2x+\cdots+C_mx^{m-1}\right)$$
+        <h4>Raíces complejas \(r=\alpha\pm\beta i\)</h4>
+        $$y=e^{\alpha x}\left(C_1\cos\beta x+C_2\sin\beta x\right)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>No homogéneas</h3>
+        $$a y''+b y'+cy=g(x)$$ $$y=y_h+y_p$$
+        <p class="formula-note">
+          Para coeficientes indeterminados, la forma de \(y_p\) se elige según
+          \(g(x)\). Si se repite con \(y_h\), se multiplica por una potencia
+          adecuada de \(x\).
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Variación de parámetros</h3>
+        $$y_p=-y_1\int\frac{y_2g}{W}\,dx+y_2\int\frac{y_1g}{W}\,dx$$
+        $$W=y_1y_2'-y_1'y_2$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Sistemas lineales</h3>
+        $$\mathbf{x}'=A\mathbf{x}$$ $$\mathbf{x}(t)=e^{At}\mathbf{x}(0)$$
+        $$\det(A-\lambda I)=0$$ $$\mathbf{x}(t)=\sum_i C_i\mathbf{v}_i
+        e^{\lambda_i t}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Transformada de Laplace</h3>
+        $$\mathcal{L}\{f(t)\}=\int_0^\infty e^{-st}f(t)\,dt$$
+        $$\mathcal{L}\{f'\}=sF(s)-f(0)$$
+        $$\mathcal{L}\{f''\}=s^2F(s)-sf(0)-f'(0)$$
+        $$\mathcal{L}\{e^{at}f(t)\}=F(s-a)$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Transformadas frecuentes</h3>
+        $$\mathcal{L}\{1\}=\frac1s,\qquad
+        \mathcal{L}\{t^n\}=\frac{n!}{s^{n+1}}$$
+        $$\mathcal{L}\{e^{at}\}=\frac{1}{s-a}$$ $$\mathcal{L}\{\sin
+        bt\}=\frac{b}{s^2+b^2},\qquad \mathcal{L}\{\cos bt\}=\frac{s}{s^2+b^2}$$
+        $$\mathcal{L}\{\sinh bt\}=\frac{b}{s^2-b^2},\qquad \mathcal{L}\{\cosh
+        bt\}=\frac{s}{s^2-b^2}$$ $$\mathcal{L}\{f*g\}=F(s)G(s)$$
+      </section>
+    </div>
+  </article>
+  <nav class="formula-topic-navigation" data-topic-navigation aria-label="Otros formularios"></nav>
+</section>

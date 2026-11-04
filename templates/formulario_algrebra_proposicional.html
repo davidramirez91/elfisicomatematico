@@ -1,0 +1,307 @@
+<!-- Formulario modular para cargar mediante static/js/app.js; no es un documento HTML completo. -->
+<section class="page-section formula-page" data-formula-page="formulario_algrebra_proposicional">
+  <nav class="formula-breadcrumb" aria-label="Ruta de navegación">
+    <a href="#formularios">← Volver a todos los formularios</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Álgebra proposicional</span>
+  </nav>
+
+  <article class="formula-panel is-active" id="formula-algrebra-proposicional"
+           role="region" aria-labelledby="formula-algrebra-proposicional-title">
+    <header class="formula-panel-header">
+      <div>
+        <h2 id="formula-algrebra-proposicional-title">Álgebra proposicional</h2>
+        <p>Conectores, tablas de verdad, leyes de equivalencia y reglas de inferencia de la lógica clásica bivalente.</p>
+      </div>
+      <button class="btn-print" type="button" data-print-section="formula-algrebra-proposicional">
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card wide">
+        <h3>Notación y conceptos fundamentales</h3>
+        <p><strong>Proposición:</strong> enunciado que es verdadero (V) o falso (F). Esta guía emplea lógica proposicional clásica de dos valores.</p>
+        <p>\(\neg\) negación; \(\land\) conjunción (y); \(\lor\) disyunción inclusiva (o); \(\oplus\) disyunción exclusiva (o bien uno u otro); \(\to\) condicional; \(\leftrightarrow\) bicondicional.</p>
+        <p>\(\top\) = tautología (siempre verdadera); \(\bot\) = contradicción (siempre falsa).</p>
+        <p><strong>Equivalencia lógica:</strong> \(A\equiv B\) significa que ambas expresiones tienen idéntica tabla de verdad. <strong>Consecuencia lógica:</strong> \(A\models B\) significa que siempre que A sea verdadera, B también lo es; no exige que sean equivalentes.</p>
+        <p class="formula-note"><strong>Prioridad convencional:</strong> paréntesis, \(\neg\), \(\land\), \(\lor\) / \(\oplus\), \(\to\) y \(\leftrightarrow\). Para evitar ambigüedades, utiliza siempre paréntesis.</p>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Tablas de verdad · Negación</h3>
+              <div style="overflow-x: auto;">
+        <table>
+          <caption style="padding: 0 0 10px; text-align: left; color: var(--text-soft);">Negación: cambia el valor de verdad de la proposición.</caption>
+          <thead><tr><th scope="col">\(p\)</th><th scope="col">\(\neg p\)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">V</th><td>F</td></tr>
+            <tr><th scope="row">F</th><td>V</td></tr>
+          </tbody>
+        </table>
+      </div>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Tablas de verdad · Conectores principales</h3>
+        <p><strong>Disyunción inclusiva:</strong> \(p\lor q\) es verdadera si al menos una proposición es verdadera. <strong>Disyunción exclusiva:</strong> \(p\oplus q\) es verdadera si exactamente una lo es.</p>
+        <p><strong>Condicional:</strong> \(p\to q\) solo es falsa cuando \(p\) es verdadera y \(q\) es falsa. <strong>Bicondicional:</strong> \(p\leftrightarrow q\) es verdadera cuando tienen el mismo valor.</p>
+              <div style="overflow-x: auto;">
+        <table>
+          <caption style="padding: 0 0 10px; text-align: left; color: var(--text-soft);">Tablas para dos proposiciones; V = verdadero, F = falso.</caption>
+          <thead><tr><th scope="col">\(p\)</th><th scope="col">\(q\)</th><th scope="col">\(p\land q\)</th><th scope="col">\(p\lor q\)</th><th scope="col">\(p\oplus q\)</th><th scope="col">\(p\to q\)</th><th scope="col">\(p\leftrightarrow q\)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">V</th><td>V</td><td>V</td><td>V</td><td>F</td><td>V</td><td>V</td></tr>
+            <tr><th scope="row">V</th><td>F</td><td>F</td><td>V</td><td>V</td><td>F</td><td>F</td></tr>
+            <tr><th scope="row">F</th><td>V</td><td>F</td><td>V</td><td>V</td><td>V</td><td>F</td></tr>
+            <tr><th scope="row">F</th><td>F</td><td>F</td><td>F</td><td>F</td><td>V</td><td>V</td></tr>
+          </tbody>
+        </table>
+      </div>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Tablas de verdad · Conectores derivados</h3>
+        <p>NAND (Sheffer) es la negación de la conjunción; NOR (Peirce) es la negación de la disyunción. Ambos son conectores funcionalmente completos.</p>
+              <div style="overflow-x: auto;">
+        <table>
+          <caption style="padding: 0 0 10px; text-align: left; color: var(--text-soft);">Conectores negados: NAND y NOR.</caption>
+          <thead><tr><th scope="col">\(p\)</th><th scope="col">\(q\)</th><th scope="col">\(\neg(p\land q)\)</th><th scope="col">\(\neg(p\lor q)\)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">V</th><td>V</td><td>F</td><td>F</td></tr>
+            <tr><th scope="row">V</th><td>F</td><td>V</td><td>F</td></tr>
+            <tr><th scope="row">F</th><td>V</td><td>V</td><td>F</td></tr>
+            <tr><th scope="row">F</th><td>F</td><td>V</td><td>V</td></tr>
+          </tbody>
+        </table>
+      </div>
+        <h4>Negación de implicación y equivalencia</h4>
+              <div style="overflow-x: auto;">
+        <table>
+          <caption style="padding: 0 0 10px; text-align: left; color: var(--text-soft);">Negación de la condicional y de la bicondicional.</caption>
+          <thead><tr><th scope="col">\(p\)</th><th scope="col">\(q\)</th><th scope="col">\(\neg(p\to q)\)</th><th scope="col">\(\neg(p\leftrightarrow q)\)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">V</th><td>V</td><td>F</td><td>F</td></tr>
+            <tr><th scope="row">V</th><td>F</td><td>V</td><td>V</td></tr>
+            <tr><th scope="row">F</th><td>V</td><td>F</td><td>V</td></tr>
+            <tr><th scope="row">F</th><td>F</td><td>F</td><td>F</td></tr>
+          </tbody>
+        </table>
+      </div>
+      </section>
+
+      <section class="formula-card">
+        <h3>1. Involución o doble negación</h3>
+        $$\neg(\neg p)\equiv p$$
+      </section>
+
+      <section class="formula-card">
+        <h3>2. Idempotencia</h3>
+        $$p\lor p\equiv p$$
+        $$p\land p\equiv p$$
+      </section>
+
+      <section class="formula-card">
+        <h3>3. Leyes de identidad</h3>
+        $$p\land\top\equiv p$$
+        $$p\lor\bot\equiv p$$
+      </section>
+
+      <section class="formula-card">
+        <h3>4. Leyes de dominación o anulación</h3>
+        $$p\lor\top\equiv\top$$
+        $$p\land\bot\equiv\bot$$
+      </section>
+
+      <section class="formula-card">
+        <h3>5. Complementación, tercero excluido y contradicción</h3>
+        $$p\lor\neg p\equiv\top$$
+        $$p\land\neg p\equiv\bot$$
+        $$\neg\top\equiv\bot,\qquad\neg\bot\equiv\top$$
+      </section>
+
+      <section class="formula-card">
+        <h3>6. Conmutatividad</h3>
+        $$p\lor q\equiv q\lor p$$
+        $$p\land q\equiv q\land p$$
+        $$p\oplus q\equiv q\oplus p$$
+        $$p\leftrightarrow q\equiv q\leftrightarrow p$$
+      </section>
+
+      <section class="formula-card">
+        <h3>7. Asociatividad</h3>
+        $$(p\lor q)\lor r\equiv p\lor(q\lor r)$$
+        $$(p\land q)\land r\equiv p\land(q\land r)$$
+        $$(p\oplus q)\oplus r\equiv p\oplus(q\oplus r)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>8. Distributividad</h3>
+        $$p\land(q\lor r)\equiv(p\land q)\lor(p\land r)$$
+        $$p\lor(q\land r)\equiv(p\lor q)\land(p\lor r)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>9. Leyes de De Morgan</h3>
+        $$\neg(p\lor q)\equiv\neg p\land\neg q$$
+        $$\neg(p\land q)\equiv\neg p\lor\neg q$$
+        <p class="formula-note">Para negar una combinación, se niega cada proposición y se intercambian \(\land\) y \(\lor\).</p>
+      </section>
+
+      <section class="formula-card">
+        <h3>10. Absorción</h3>
+        $$p\lor(p\land q)\equiv p$$
+        $$p\land(p\lor q)\equiv p$$
+        $$p\lor(\neg p\land q)\equiv p\lor q$$
+        $$p\land(\neg p\lor q)\equiv p\land q$$
+      </section>
+
+      <section class="formula-card">
+        <h3>11. Condicional o implicación material</h3>
+        $$p\to q\equiv\neg p\lor q$$
+        $$p\to q\equiv\neg(p\land\neg q)$$
+        $$\neg(p\to q)\equiv p\land\neg q$$
+      </section>
+
+      <section class="formula-card">
+        <h3>12. Contraposición</h3>
+        $$p\to q\equiv\neg q\to\neg p$$
+        $$\neg p\to\neg q\equiv q\to p$$
+        <p class="formula-note">La recíproca \(q\to p\) y la inversa \(\neg p\to\neg q\) no son, en general, equivalentes a \(p\to q\).</p>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>13. Bicondicional o equivalencia</h3>
+        $$p\leftrightarrow q\equiv(p\to q)\land(q\to p)$$
+        $$p\leftrightarrow q\equiv(p\land q)\lor(\neg p\land\neg q)$$
+        $$p\leftrightarrow q\equiv(\neg p\lor q)\land(\neg q\lor p)$$
+        $$p\leftrightarrow q\equiv\neg(p\oplus q)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>14. Diferencia simétrica (XOR)</h3>
+        $$p\oplus q\equiv(p\lor q)\land\neg(p\land q)$$
+        $$p\oplus q\equiv(p\land\neg q)\lor(\neg p\land q)$$
+        $$p\oplus q\equiv\neg(p\leftrightarrow q)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>15. Identidades de XOR</h3>
+        $$p\oplus\bot\equiv p$$
+        $$p\oplus\top\equiv\neg p$$
+        $$p\oplus p\equiv\bot$$
+        $$p\oplus\neg p\equiv\top$$
+      </section>
+
+      <section class="formula-card">
+        <h3>16. Exportación e importación</h3>
+        $$p\to(q\to r)\equiv(p\land q)\to r$$
+      </section>
+
+      <section class="formula-card">
+        <h3>17. Distribución de condicionales</h3>
+        $$p\to(q\land r)\equiv(p\to q)\land(p\to r)$$
+        $$(p\lor q)\to r\equiv(p\to r)\land(q\to r)$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>18. Ley del consenso</h3>
+        $$(p\land q)\lor(\neg p\land r)\lor(q\land r)$$
+        $$\equiv(p\land q)\lor(\neg p\land r)$$
+        $$(p\lor q)\land(\neg p\lor r)\land(q\lor r)$$
+        $$\equiv(p\lor q)\land(\neg p\lor r)$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>19. Tautologías útiles</h3>
+        $$(p\land q)\to p\equiv\top$$
+        $$p\to(p\lor q)\equiv\top$$
+        $$[(p\to q)\land(q\to r)]\to(p\to r)\equiv\top$$
+        $$[(p\to q)\land p]\to q\equiv\top$$
+        <p class="formula-note">La condicional completa puede ser una tautología aunque sus dos partes <strong>no</strong> sean equivalentes.</p>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Reglas de inferencia · Cómo se interpretan</h3>
+        <p>Una <strong>regla de inferencia</strong> permite obtener una conclusión a partir de premisas. Aquí se usa \(\models\) para indicar consecuencia semántica; las comas separan premisas.</p>
+        <p><strong>No confundir:</strong> \(p\land q\models p\) es válido, pero \(p\land q\not\equiv p\). Del mismo modo, \(p\models p\lor q\) no es una equivalencia.</p>
+      </section>
+
+      <section class="formula-card">
+        <h3>20. Modus ponens</h3>
+        $$p,\quad p\to q\quad\models\quad q$$
+      </section>
+
+      <section class="formula-card">
+        <h3>21. Modus tollens</h3>
+        $$p\to q,\quad\neg q\quad\models\quad\neg p$$
+      </section>
+
+      <section class="formula-card">
+        <h3>22. Silogismo hipotético o transitividad</h3>
+        $$p\to q,\quad q\to r\quad\models\quad p\to r$$
+      </section>
+
+      <section class="formula-card">
+        <h3>23. Silogismo disyuntivo</h3>
+        $$p\lor q,\quad\neg p\quad\models\quad q$$
+        $$p\lor q,\quad\neg q\quad\models\quad p$$
+      </section>
+
+      <section class="formula-card">
+        <h3>24. Ley de adición</h3>
+        $$p\quad\models\quad p\lor q$$
+      </section>
+
+      <section class="formula-card">
+        <h3>25. Ley de simplificación</h3>
+        $$p\land q\quad\models\quad p$$
+        $$p\land q\quad\models\quad q$$
+      </section>
+
+      <section class="formula-card">
+        <h3>26. Ley de conjunción</h3>
+        $$p,\quad q\quad\models\quad p\land q$$
+      </section>
+
+      <section class="formula-card">
+        <h3>27. Resolución</h3>
+        $$p\lor q,\quad\neg p\lor r\quad\models\quad q\lor r$$
+      </section>
+
+      <section class="formula-card">
+        <h3>28. Dilema constructivo</h3>
+        $$p\to r,\quad q\to s,\quad p\lor q$$
+        $$\models\quad r\lor s$$
+      </section>
+
+      <section class="formula-card">
+        <h3>29. Dilema destructivo</h3>
+        $$p\to r,\quad q\to s,\quad\neg r\lor\neg s$$
+        $$\models\quad\neg p\lor\neg q$$
+      </section>
+
+      <section class="formula-card">
+        <h3>30. Eliminación del bicondicional</h3>
+        $$p\leftrightarrow q\quad\models\quad p\to q$$
+        $$p\leftrightarrow q\quad\models\quad q\to p$$
+      </section>
+
+      <section class="formula-card">
+        <h3>31. Introducción del bicondicional</h3>
+        $$p\to q,\quad q\to p\quad\models\quad p\leftrightarrow q$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Ejemplo rápido · Diferencia entre equivalencia e inferencia</h3>
+        <p>Si \(p\) es verdadera y \(q\) es falsa, entonces \(p\lor q\) es verdadera y \(p\land q\) es falsa.</p>
+        $$p\land q\models p\qquad\text{(inferencia válida)}$$
+        $$p\land q\not\equiv p\qquad\text{(no son equivalentes)}$$
+        $$p\to q\equiv\neg p\lor q\qquad\text{(equivalencia válida)}$$
+        <p class="formula-note">Para comprobar una equivalencia, compara todas las filas de ambas columnas en sus tablas de verdad. Para comprobar una inferencia, busca si existe alguna fila con todas las premisas verdaderas y la conclusión falsa: si existe, la inferencia es inválida.</p>
+      </section>
+    </div>
+  </article>
+
+  <nav class="formula-topic-navigation" data-topic-navigation aria-label="Otros formularios"></nav>
+</section>

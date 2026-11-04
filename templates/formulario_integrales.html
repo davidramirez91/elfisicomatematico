@@ -1,0 +1,139 @@
+<!-- Archivo editable: añade aquí tus tarjetas <section class="formula-card">. -->
+<section class="page-section formula-page" data-formula-page="formulario_integrales">
+  <nav class="formula-breadcrumb" aria-label="Ruta de navegación">
+    <a href="#formularios">← Volver a todos los formularios</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Integrales</span>
+  </nav>
+  <article class="formula-panel is-active" id="formula-integrales" role="region" aria-labelledby="formula-integrales-title">
+    <header class="formula-panel-header">
+      <div>
+        <h2 id="formula-integrales-title">Cálculo 2 · Integrales</h2>
+        <p>Integrales inmediatas, métodos y aplicaciones fundamentales.</p>
+      </div>
+      <button
+        class="btn-print"
+        type="button"
+        data-print-section="formula-integrales"
+      >
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card">
+        <h3>Propiedades básicas</h3>
+        $$\int [f(x)\pm g(x)]\,dx=\int f(x)\,dx\pm\int g(x)\,dx$$ $$\int c
+        f(x)\,dx=c\int f(x)\,dx$$ $$\int u^n\,du=\frac{u^{n+1}}{n+1}+C,\qquad
+        n\ne-1$$ $$\int\frac{du}{u}=\ln|u|+C$$ $$\int e^u\,du=e^u+C$$ $$\int
+        a^u\,du=\frac{a^u}{\ln a}+C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Integrales trigonométricas inmediatas</h3>
+        $$\int\sin u\,du=-\cos u+C$$ $$\int\cos u\,du=\sin u+C$$
+        $$\int\sec^2u\,du=\tan u+C$$ $$\int\csc^2u\,du=-\cot u+C$$ $$\int\sec
+        u\tan u\,du=\sec u+C$$ $$\int\csc u\cot u\,du=-\csc u+C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Logarítmicas trigonométricas</h3>
+        $$\int\tan u\,du=\ln|\sec u|+C$$ $$\int\cot u\,du=\ln|\sin u|+C$$
+        $$\int\sec u\,du=\ln|\sec u+\tan u|+C$$ $$\int\csc u\,du=-\ln|\csc
+        u+\cot u|+C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Formas inversas</h3>
+        $$\int\frac{du}{a^2+u^2}=\frac1a\arctan\left(\frac ua\right)+C$$
+        $$\int\frac{du}{\sqrt{a^2-u^2}}=\arcsin\left(\frac ua\right)+C$$
+        $$\int\frac{du}{u\sqrt{u^2-a^2}}=\frac1a\operatorname{arcsec}\left(\frac{|u|}{a}\right)+C$$
+        $$\int\frac{du}{u^2-a^2}=\frac{1}{2a}\ln\left|\frac{u-a}{u+a}\right|+C$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Integración por sustitución</h3>
+        $$u=g(x),\qquad du=g'(x)\,dx$$ $$\int f(g(x))g'(x)\,dx=\int f(u)\,du$$
+        <p class="formula-note">
+          Busca una función interna y una expresión proporcional a su derivada.
+        </p>
+      </section>
+
+      <section class="formula-card">
+        <h3>Integración por partes</h3>
+        $$\int u\,dv=uv-\int v\,du$$
+        <p>
+          Una guía frecuente para elegir \(u\): logarítmica, inversa
+          trigonométrica, algebraica, trigonométrica y exponencial.
+        </p>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Integración por sustitución trigonométrica</h3>
+        <p>
+          Este método transforma radicales cuadráticos en expresiones
+          trigonométricas. La forma del radical determina la sustitución y el
+          triángulo rectángulo que se utiliza para regresar a la variable original.
+        </p>
+
+        <figure style="margin: 18px 0 0">
+          <img
+            src="./static/img/sustitucion-trigonometrica.svg"
+            width="1800"
+            height="760"
+            loading="lazy"
+            alt="Tres casos de integración por sustitución trigonométrica con sus triángulos asociados"
+            style="width: 100%; height: auto; border-radius: 16px"
+          />
+        </figure>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:16px;">
+          <div class="formula-note">
+            <strong>Caso 1: \(\sqrt{a^2-u^2}\)</strong>
+            \[u=a\sin\theta,\qquad du=a\cos\theta\,d\theta.\]
+            \[\sqrt{a^2-u^2}=a\cos\theta.\]
+          </div>
+          <div class="formula-note">
+            <strong>Caso 2: \(\sqrt{a^2+u^2}\)</strong>
+            \[u=a\tan\theta,\qquad du=a\sec^2\theta\,d\theta.\]
+            \[\sqrt{a^2+u^2}=a\sec\theta.\]
+          </div>
+          <div class="formula-note">
+            <strong>Caso 3: \(\sqrt{u^2-a^2}\)</strong>
+            \[u=a\sec\theta,\qquad du=a\sec\theta\tan\theta\,d\theta.\]
+            \[\sqrt{u^2-a^2}=a\tan\theta.\]
+          </div>
+        </div>
+
+        <h4>Identidades que justifican las sustituciones</h4>
+        \[1-\sin^2\theta=\cos^2\theta,\qquad 1+\tan^2\theta=\sec^2\theta,\qquad \sec^2\theta-1=\tan^2\theta.\]
+      </section>
+
+      <section class="formula-card">
+        <h3>Fracciones parciales</h3>
+        $$\frac{P(x)}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b}$$
+        $$\frac{P(x)}{(x-a)^n}=\frac{A_1}{x-a}+\frac{A_2}{(x-a)^2}+\cdots+\frac{A_n}{(x-a)^n}$$
+        $$\frac{P(x)}{x^2+bx+c}=\frac{Ax+B}{x^2+bx+c}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Integrales con radicales</h3>
+        $$\int\sqrt{a^2-u^2}\,du=\frac{u}{2}\sqrt{a^2-u^2}+\frac{a^2}{2}\arcsin\left(\frac
+        ua\right)+C$$
+        $$\int\sqrt{u^2+a^2}\,du=\frac{u}{2}\sqrt{u^2+a^2}+\frac{a^2}{2}\ln\left|u+\sqrt{u^2+a^2}\right|+C$$
+        $$\int\sqrt{u^2-a^2}\,du=\frac{u}{2}\sqrt{u^2-a^2}-\frac{a^2}{2}\ln\left|u+\sqrt{u^2-a^2}\right|+C$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Integral definida y teorema fundamental</h3>
+        $$\int_a^b f(x)\,dx=F(b)-F(a),\qquad F'(x)=f(x)$$
+        $$\frac{d}{dx}\left(\int_a^x f(t)\,dt\right)=f(x)$$
+        $$\frac{d}{dx}\left(\int_{g(x)}^{h(x)}f(t)\,dt\right)=f(h(x))h'(x)-f(g(x))g'(x)$$
+        $$A=\int_a^b |f(x)-g(x)|\,dx$$
+        $$V_{\text{discos}}=\pi\int_a^b\left[R(x)^2-r(x)^2\right]dx$$
+        $$V_{\text{capas}}=2\pi\int_a^b(\text{radio})(\text{altura})\,dx$$
+      </section>
+    </div>
+  </article>
+  <nav class="formula-topic-navigation" data-topic-navigation aria-label="Otros formularios"></nav>
+</section>

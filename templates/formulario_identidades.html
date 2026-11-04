@@ -1,0 +1,447 @@
+<!-- Archivo editable: añade aquí tus tarjetas <section class="formula-card">. -->
+<section
+  class="page-section formula-page"
+  data-formula-page="formulario_identidades"
+>
+  <nav class="formula-breadcrumb" aria-label="Ruta de navegación">
+    <a href="#formularios">← Volver a todos los formularios</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Identidades trigonométricas</span>
+  </nav>
+  <article
+    class="formula-panel is-active"
+    id="formula-identidades"
+    role="region"
+    aria-labelledby="formula-identidades-title"
+  >
+    <header class="formula-panel-header">
+      <div>
+        <h2 id="formula-identidades-title">Identidades trigonométricas</h2>
+        <p>Relaciones fundamentales, círculo unitario y triángulos notables.</p>
+      </div>
+      <button
+        class="btn-print"
+        type="button"
+        data-print-section="formula-identidades"
+      >
+        Imprimir este formulario
+      </button>
+    </header>
+
+    <div class="formula-grid">
+      <section class="formula-card">
+        <h3>Identidades recíprocas y de cociente</h3>
+        $$\csc\theta=\frac{1}{\sin\theta},\quad
+        \sec\theta=\frac{1}{\cos\theta},\quad \cot\theta=\frac{1}{\tan\theta}$$
+        $$\tan\theta=\frac{\sin\theta}{\cos\theta},\quad
+        \cot\theta=\frac{\cos\theta}{\sin\theta}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Identidades pitagóricas</h3>
+        $$\sin^2\theta+\cos^2\theta=1$$ $$\sec^2\theta-\tan^2\theta=1$$
+        $$\csc^2\theta-\cot^2\theta=1$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Paridad</h3>
+        $$\sin(-\theta)=-\sin\theta,\quad \cos(-\theta)=\cos\theta,\quad
+        \tan(-\theta)=-\tan\theta$$ $$\sin(\theta+2\pi)=\sin\theta,\quad
+        \cos(\theta+2\pi)=\cos\theta$$ $$\tan(\theta+\pi)=\tan\theta$$
+        <h3>Periodicidad</h3>
+        $$\sin\left(\frac{\pi}{2}-\theta\right)=\cos\theta,\quad
+        \cos\left(\frac{\pi}{2}-\theta\right)=\sin\theta$$
+        <h3>Cofunciones</h3>
+        $$\tan\left(\frac{\pi}{2}-\theta\right)=\cot\theta,\quad
+        \sec\left(\frac{\pi}{2}-\theta\right)=\csc\theta$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Suma y diferencia de ángulos</h3>
+        $$\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\cos\alpha\sin\beta$$
+        $$\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta$$
+        $$\tan(\alpha\pm\beta)=\frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ángulo doble y triple</h3>
+        $$\sin(2\theta)=2\sin\theta\cos\theta$$
+        $$\cos(2\theta)=\cos^2\theta-\sin^2\theta=1-2\sin^2\theta=2\cos^2\theta-1$$
+        $$\tan(2\theta)=\frac{2\tan\theta}{1-\tan^2\theta}$$
+        $$\sin(3\theta)=3\sin\theta-4\sin^3\theta$$
+        $$\cos(3\theta)=4\cos^3\theta-3\cos\theta$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Ángulo mitad</h3>
+        $$\sin^2\left(\frac{\theta}{2}\right)=\frac{1}{2}-\frac{1}{2}\cos\theta$$
+        $$\cos^2\left(\frac{\theta}{2}\right)=\frac{1}{2}+\frac{1}{2}\cos\theta$$
+        $$\tan\left(\frac{\theta}{2}\right)=\frac{\sin\theta}{1+\cos\theta}=\frac{1-\cos\theta}{\sin\theta}$$
+        <h3>Reducción de potencias</h3>
+        $$\sin^2\theta=\frac{1}{2}-\frac{1}{2}\cos(2\theta)$$
+        $$\cos^2\theta=\frac{1}{2}+\frac{1}{2}\cos(2\theta)$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Producto a suma</h3>
+        $$\sin\alpha\sin\beta=\frac{1}{2}\left[\cos(\alpha-\beta)-\cos(\alpha+\beta)\right]$$
+        $$\cos\alpha\cos\beta=\frac{1}{2}\left[\cos(\alpha-\beta)+\cos(\alpha+\beta)\right]$$
+        $$\sin\alpha\cos\beta=\frac{1}{2}\left[\sin(\alpha+\beta)+\sin(\alpha-\beta)\right]$$
+      </section>
+
+      <section class="formula-card">
+        <h3>Suma a producto</h3>
+        $$\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)$$
+        $$\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)$$
+        $$\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)$$
+        $$\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)$$
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Gráfica del círculo unitario</h3>
+        <p>
+          Cada punto de la circunferencia tiene la forma
+          \(P(\cos\theta,\sin\theta)\). La gráfica reúne los ángulos notables en
+          grados y radianes, junto con sus coordenadas exactas.
+        </p>
+        <figure style="margin: 18px 0 0">
+          <img
+            src="./static/img/circulo-unitario.png"
+            width="1400"
+            height="1400"
+            loading="lazy"
+            alt="Círculo unitario con ángulos notables, radianes y coordenadas exactas"
+            style="width: 100%; height: auto; border-radius: 16px"
+          />
+        </figure>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Círculo unitario: ángulos notables</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Grados</th>
+              <th>Radianes</th>
+              <th>\(\cos\theta\)</th>
+              <th>\(\sin\theta\)</th>
+              <th>\(\tan\theta\)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0°</td>
+              <td>\(0\)</td>
+              <td>\(1\)</td>
+              <td>\(0\)</td>
+              <td>\(0\)</td>
+            </tr>
+            <tr>
+              <td>30°</td>
+              <td>\(\pi/6\)</td>
+              <td>\(\sqrt3/2\)</td>
+              <td>\(1/2\)</td>
+              <td>\(\sqrt3/3\)</td>
+            </tr>
+            <tr>
+              <td>45°</td>
+              <td>\(\pi/4\)</td>
+              <td>\(\sqrt2/2\)</td>
+              <td>\(\sqrt2/2\)</td>
+              <td>\(1\)</td>
+            </tr>
+            <tr>
+              <td>60°</td>
+              <td>\(\pi/3\)</td>
+              <td>\(1/2\)</td>
+              <td>\(\sqrt3/2\)</td>
+              <td>\(\sqrt3\)</td>
+            </tr>
+            <tr>
+              <td>90°</td>
+              <td>\(\pi/2\)</td>
+              <td>\(0\)</td>
+              <td>\(1\)</td>
+              <td>No definida</td>
+            </tr>
+            <tr>
+              <td>120°</td>
+              <td>\(2\pi/3\)</td>
+              <td>\(-1/2\)</td>
+              <td>\(\sqrt3/2\)</td>
+              <td>\(-\sqrt3\)</td>
+            </tr>
+            <tr>
+              <td>135°</td>
+              <td>\(3\pi/4\)</td>
+              <td>\(-\sqrt2/2\)</td>
+              <td>\(\sqrt2/2\)</td>
+              <td>\(-1\)</td>
+            </tr>
+            <tr>
+              <td>150°</td>
+              <td>\(5\pi/6\)</td>
+              <td>\(-\sqrt3/2\)</td>
+              <td>\(1/2\)</td>
+              <td>\(-\sqrt3/3\)</td>
+            </tr>
+            <tr>
+              <td>180°</td>
+              <td>\(\pi\)</td>
+              <td>\(-1\)</td>
+              <td>\(0\)</td>
+              <td>\(0\)</td>
+            </tr>
+            <tr>
+              <td>210°</td>
+              <td>\(7\pi/6\)</td>
+              <td>\(-\sqrt3/2\)</td>
+              <td>\(-1/2\)</td>
+              <td>\(\sqrt3/3\)</td>
+            </tr>
+            <tr>
+              <td>225°</td>
+              <td>\(5\pi/4\)</td>
+              <td>\(-\sqrt2/2\)</td>
+              <td>\(-\sqrt2/2\)</td>
+              <td>\(1\)</td>
+            </tr>
+            <tr>
+              <td>240°</td>
+              <td>\(4\pi/3\)</td>
+              <td>\(-1/2\)</td>
+              <td>\(-\sqrt3/2\)</td>
+              <td>\(\sqrt3\)</td>
+            </tr>
+            <tr>
+              <td>270°</td>
+              <td>\(3\pi/2\)</td>
+              <td>\(0\)</td>
+              <td>\(-1\)</td>
+              <td>No definida</td>
+            </tr>
+            <tr>
+              <td>300°</td>
+              <td>\(5\pi/3\)</td>
+              <td>\(1/2\)</td>
+              <td>\(-\sqrt3/2\)</td>
+              <td>\(-\sqrt3\)</td>
+            </tr>
+            <tr>
+              <td>315°</td>
+              <td>\(7\pi/4\)</td>
+              <td>\(\sqrt2/2\)</td>
+              <td>\(-\sqrt2/2\)</td>
+              <td>\(-1\)</td>
+            </tr>
+            <tr>
+              <td>330°</td>
+              <td>\(11\pi/6\)</td>
+              <td>\(\sqrt3/2\)</td>
+              <td>\(-1/2\)</td>
+              <td>\(-\sqrt3/3\)</td>
+            </tr>
+            <tr>
+              <td>360°</td>
+              <td>\(2\pi\)</td>
+              <td>\(1\)</td>
+              <td>\(0\)</td>
+              <td>\(0\)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="formula-note">
+          Signos por cuadrante: I todas positivas; II seno; III tangente; IV
+          coseno.
+        </p>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Triángulos notables: seis configuraciones fundamentales</h3>
+        <p>
+          Los siguientes triángulos permiten obtener razones trigonométricas
+          exactas sin calculadora. Se incluyen los triángulos de
+          \(8^\circ\!-\!82^\circ\), \(37^\circ\!-\!53^\circ\),
+          \(30^\circ\!-\!60^\circ\), \(16^\circ\!-\!74^\circ\),
+          \(45^\circ\!-\!45^\circ\) y \(15^\circ\!-\!75^\circ\).
+        </p>
+
+        <figure style="margin: 18px 0 0">
+          <img
+            src="./static/img/triangulos-notables.png"
+            width="1600"
+            height="980"
+            loading="lazy"
+            alt="Seis triángulos notables con sus ángulos y relaciones exactas de lados"
+            style="width: 100%; height: auto; border-radius: 16px"
+          />
+        </figure>
+
+        <div class="formula-note" style="margin-top: 14px">
+          Para un ángulo agudo \(\theta\): \[ \sin\theta=\frac{\text{cateto
+          opuesto}}{\text{hipotenusa}},\qquad \cos\theta=\frac{\text{cateto
+          adyacente}}{\text{hipotenusa}},\qquad \tan\theta=\frac{\text{cateto
+          opuesto}}{\text{cateto adyacente}}. \]
+        </div>
+      </section>
+
+      <section class="formula-card wide">
+        <h3>Tabla de razones trigonométricas de los seis triángulos</h3>
+        <p>
+          La tabla se presenta en dos bloques para conservar la legibilidad en
+          pantalla, celulares y hojas A4.
+        </p>
+
+        <h4>
+          Triángulos \(8^\circ\!-\!82^\circ\), \(15^\circ\!-\!75^\circ\) y
+          \(16^\circ\!-\!74^\circ\)
+        </h4>
+        <div style="overflow-x: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Razón</th>
+                <th>8°</th>
+                <th>82°</th>
+                <th>15°</th>
+                <th>75°</th>
+                <th>16°</th>
+                <th>74°</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>\(\sin\)</th>
+                <td>\(\frac{\sqrt2}{10}\)</td>
+                <td>\(\frac{7\sqrt2}{10}\)</td>
+                <td>\(\frac{\sqrt6-\sqrt2}{4}\)</td>
+                <td>\(\frac{\sqrt6+\sqrt2}{4}\)</td>
+                <td>\(\frac7{25}\)</td>
+                <td>\(\frac{24}{25}\)</td>
+              </tr>
+              <tr>
+                <th>\(\cos\)</th>
+                <td>\(\frac{7\sqrt2}{10}\)</td>
+                <td>\(\frac{\sqrt2}{10}\)</td>
+                <td>\(\frac{\sqrt6+\sqrt2}{4}\)</td>
+                <td>\(\frac{\sqrt6-\sqrt2}{4}\)</td>
+                <td>\(\frac{24}{25}\)</td>
+                <td>\(\frac7{25}\)</td>
+              </tr>
+              <tr>
+                <th>\(\tan\)</th>
+                <td>\(\frac17\)</td>
+                <td>\(7\)</td>
+                <td>\(2-\sqrt3\)</td>
+                <td>\(2+\sqrt3\)</td>
+                <td>\(\frac7{24}\)</td>
+                <td>\(\frac{24}{7}\)</td>
+              </tr>
+              <tr>
+                <th>\(\cot\)</th>
+                <td>\(7\)</td>
+                <td>\(\frac17\)</td>
+                <td>\(2+\sqrt3\)</td>
+                <td>\(2-\sqrt3\)</td>
+                <td>\(\frac{24}{7}\)</td>
+                <td>\(\frac7{24}\)</td>
+              </tr>
+              <tr>
+                <th>\(\sec\)</th>
+                <td>\(\frac{5\sqrt2}{7}\)</td>
+                <td>\(5\sqrt2\)</td>
+                <td>\(\sqrt6-\sqrt2\)</td>
+                <td>\(\sqrt6+\sqrt2\)</td>
+                <td>\(\frac{25}{24}\)</td>
+                <td>\(\frac{25}{7}\)</td>
+              </tr>
+              <tr>
+                <th>\(\csc\)</th>
+                <td>\(5\sqrt2\)</td>
+                <td>\(\frac{5\sqrt2}{7}\)</td>
+                <td>\(\sqrt6+\sqrt2\)</td>
+                <td>\(\sqrt6-\sqrt2\)</td>
+                <td>\(\frac{25}{7}\)</td>
+                <td>\(\frac{25}{24}\)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>
+          Triángulos \(30^\circ\!-\!60^\circ\), \(37^\circ\!-\!53^\circ\) y
+          \(45^\circ\!-\!45^\circ\)
+        </h4>
+        <div style="overflow-x: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Razón</th>
+                <th>30°</th>
+                <th>60°</th>
+                <th>37°</th>
+                <th>53°</th>
+                <th>45°</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>\(\sin\)</th>
+                <td>\(\frac12\)</td>
+                <td>\(\frac{\sqrt3}{2}\)</td>
+                <td>\(\frac35\)</td>
+                <td>\(\frac45\)</td>
+                <td>\(\frac{\sqrt2}{2}\)</td>
+              </tr>
+              <tr>
+                <th>\(\cos\)</th>
+                <td>\(\frac{\sqrt3}{2}\)</td>
+                <td>\(\frac12\)</td>
+                <td>\(\frac45\)</td>
+                <td>\(\frac35\)</td>
+                <td>\(\frac{\sqrt2}{2}\)</td>
+              </tr>
+              <tr>
+                <th>\(\tan\)</th>
+                <td>\(\frac{\sqrt3}{3}\)</td>
+                <td>\(\sqrt3\)</td>
+                <td>\(\frac34\)</td>
+                <td>\(\frac43\)</td>
+                <td>\(1\)</td>
+              </tr>
+              <tr>
+                <th>\(\cot\)</th>
+                <td>\(\sqrt3\)</td>
+                <td>\(\frac{\sqrt3}{3}\)</td>
+                <td>\(\frac43\)</td>
+                <td>\(\frac34\)</td>
+                <td>\(1\)</td>
+              </tr>
+              <tr>
+                <th>\(\sec\)</th>
+                <td>\(\frac{2\sqrt3}{3}\)</td>
+                <td>\(2\)</td>
+                <td>\(\frac54\)</td>
+                <td>\(\frac53\)</td>
+                <td>\(\sqrt2\)</td>
+              </tr>
+              <tr>
+                <th>\(\csc\)</th>
+                <td>\(2\)</td>
+                <td>\(\frac{2\sqrt{3}}{3}\)</td>
+                <td>\(\frac{5}{3}\)</td>
+                <td>\(\frac{5}{4}\)</td>
+                <td>\(\sqrt2\)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </article>
+  <nav
+    class="formula-topic-navigation"
+    data-topic-navigation
+    aria-label="Otros formularios"
+  ></nav>
+</section>
